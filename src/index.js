@@ -1,21 +1,16 @@
 import React, { useState, useEffect } from "react";
+import { HashRouter, Route } from 'react-router-dom';
 import ReactDOM from "react-dom";
-import { firebaseConfig } from "./config";
+import { firebaseConfig } from "./Config";
 import useAxios from "./hooks/useAxios";
+import Home from "./pages/Home";
 
 
 const App = () => {
-
-  const { loading, data, error, refetch } = useAxios({
-    url: `${firebaseConfig.databaseURL}/.json`
-  });
-  console.log(
-    `Loading : ${loading} \nError : ${error} \nData : ${JSON.stringify(data)}`
-  );
   return (
-    <div>
-      <h1>hello</h1>
-    </div>
+    <HashRouter basename="/what_to_eat_today">
+      <Route path="/" exact={true} component={Home}/>
+    </HashRouter>
   );
 }
 
