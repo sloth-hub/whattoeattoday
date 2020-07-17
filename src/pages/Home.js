@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { firebaseConfig } from "../Config";
 import Weather from "../components/Weather";
+import Mood from "../pages/Mood";
 
 const API_KEY = "80e4e2378e235fae347d6f18a4538af9";
 
@@ -55,7 +57,7 @@ const Home = () => {
 
     return (
         <div className="container">
-            {state === null ?
+            {loadedCoords === null ?
                 // null이면
                 <div className="loader">
                     <h1 className="loading_text">Loading...</h1>
@@ -74,7 +76,9 @@ const Home = () => {
                         city={state.city}/>
                     </section>
                     <section className="home_start">
-                        <button className="start_btn">START</button>
+                        <Link to={{
+                            pathname: "/mood"
+                            }}><button>START</button></Link>
                     </section>
                 </div>
             }
