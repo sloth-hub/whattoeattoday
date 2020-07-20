@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { firebaseConfig } from "../Config";
 import Weather from "../components/Weather";
 import Mood from "../pages/Mood";
 
@@ -70,15 +69,22 @@ const Home = () => {
                         <h2>오늘 뭐 먹지?</h2>
                     </section>
                     <section className="home_weather">
-                        <Weather 
-                        temp={state.temp}
-                        condition={state.condition}
-                        city={state.city}/>
+                        <Weather
+                            temp={state.temp}
+                            condition={state.condition}
+                            city={state.city} />
                     </section>
                     <section className="home_start">
                         <Link to={{
-                            pathname: "/mood"
-                            }}><button>START</button></Link>
+                            pathname: "/mood",
+                            state: {
+                                temp: state.temp,
+                                condition: state.condition,
+                                city: state.city
+                            }
+                        }}>
+                        <button>START</button>
+                        </Link>
                     </section>
                 </div>
             }
