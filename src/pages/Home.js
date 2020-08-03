@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Weather from "../components/Weather";
-import Mood from "../pages/Mood";
+import Mood from "../components/Mood";
 
 const API_KEY = "80e4e2378e235fae347d6f18a4538af9";
 
@@ -76,7 +76,7 @@ const Home = () => {
                     </section>
                     <section className="home_start">
                         <Link to={{
-                            pathname: "/mood",
+                            pathname: "/ask",
                             state: {
                                 temp: state.temp,
                                 condition: state.condition,

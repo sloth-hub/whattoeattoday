@@ -1,10 +1,18 @@
 import React from "react";
+import Mood from "../components/Mood";
 
 const Ask = (props) => {
 
-    console.log(props.location.state);
+    console.log(props);
     return (
-        <div>Ask페이지 입니다</div>
+        <div className="ask_container">
+            {props.location.state == undefined ?
+                window.location.replace("/#")
+                :
+                <div>
+                    <Mood />
+                </div>}
+        </div>
     );
 }
 
