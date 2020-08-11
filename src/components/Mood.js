@@ -1,25 +1,26 @@
 import React, { useState } from "react";
 import Food from "../components/Food";
 
-const Mood = ({handleMoodChange, isGetMood}) => {
+const Mood = ({state}) => {
 
-    // const [mood, setMood] = useState('');
-    // const handleMoodChange = (evt) => {
-    //     setMood(evt.target.value);
-    // }
+    const [toggle, setToggle] = useState('');
+    const [mood, setMood] = useState('');
 
-    // const handleClick = () => {
-    //     if (mood == "") {
-    //         alert("기분을 선택해주세요.");
-    //     } else {
-    //         state.mood = mood;
-    //     }
-    // }
+    const handleMoodChange = (evt) => {
+        setMood(evt.target.value);
+    }
 
-
-
-    if (isGetMood) {
-        return <Food />;
+    const handleMoodClick = () => {
+        if (mood == "") {
+            alert("기분을 선택해주세요.");
+        } else {
+            state.mood = mood;
+            setToggle({ isGetMood: true, isGetFood: false });
+        }
+    }
+    
+    if (toggle.isGetMood) {
+        return <Food state={state} toggle={toggle} setToggle={setToggle} />;
     }
     return (
         <div className="mood_container">
@@ -29,6 +30,7 @@ const Mood = ({handleMoodChange, isGetMood}) => {
             <input type="radio" name="mood" value="melancholy" id="melancholy" onChange={handleMoodChange} /><label htmlFor="melancholy">우울함</label>
             <input type="radio" name="mood" value="sad" id="sad" onChange={handleMoodChange} /><label htmlFor="sad">슬픔</label>
             <input type="radio" name="mood" value="angry" id="angry" onChange={handleMoodChange} /><label htmlFor="angry">화남</label>
+            <button className="mood_next" onClick={handleMoodClick}>NEXT</button>
         </div>
     );
 }
