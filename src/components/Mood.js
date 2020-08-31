@@ -11,7 +11,7 @@ const Mood = ({state}) => {
     }
 
     const handleMoodClick = () => {
-        if (mood == "") {
+        if (mood === "") {
             alert("기분을 선택해주세요.");
         } else {
             state.mood = mood;

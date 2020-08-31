@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
-import Food from "../components/Food";
+import React from "react";
 import Mood from "../components/Mood";
 
 const Ask = (props) => {
 
-    if (props.location.state == undefined) {
+    if (props.location.state === undefined) {
         window.location.replace("/#") // state가 존재하지 않으면
     }
     return (

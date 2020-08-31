@@ -9,7 +9,7 @@ const Food = ({state, toggle, setToggle}) => {
         setTaste(evt.target.value);
     }
     const handleFoodClick = () => {
-        if (taste == "") {
+        if (taste === "") {
             alert("땡기는 맛을 선택해주세요.");
         } else {
             state.taste = taste;
@@ -17,7 +17,7 @@ const Food = ({state, toggle, setToggle}) => {
         }
     }
     if (toggle.isGetFood) {
-        return <Result state={state} toggle={toggle} />;
+        return <Result state={state}/>;
     }
     return (
         <div className="food_container">

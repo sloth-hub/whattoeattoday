@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Weather from "../components/Weather";
-import Mood from "../components/Mood";
 
 const API_KEY = "80e4e2378e235fae347d6f18a4538af9";
 
 const Home = () => {
 
     const [state, setState] = useState({
+        isLoading: true,
         condition: '',
         temp: '',
         city: ''
@@ -24,6 +24,7 @@ const Home = () => {
             }
         } = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`);
         setState({
+            isLoading: false,
             condition: weather[0].main,
             temp,
             city: name
@@ -59,7 +60,6 @@ const Home = () => {
             {loadedCoords === null ?
                 // null이면
                 <div className="loader">
-                    <h1 className="loading_text">Loading...</h1>
                     <h2>위치확인 허용을 눌러주세요.</h2>
                 </div>
                 : // null이 아니면
@@ -69,21 +69,23 @@ const Home = () => {
                         <h2>오늘 뭐 먹지?</h2>
                     </section>
                     <section className="home_weather">
-                        <Weather
-                            temp={state.temp}
-                            condition={state.condition}
-                            city={state.city} />
+                        {state.isLoading ?
+                            <p className="loading_text">Loading..</p> :
+                            <Weather
+                                temp={state.temp}
+                                condition={state.condition}
+                                city={state.city} />
+                        }
                     </section>
                     <section className="home_start">
                         <Link to={{
                             pathname: "/ask",
                             state: {
                                 temp: state.temp,
-                                condition: state.condition,
-                                city: state.city
+                                condition: state.condition
                             }
                         }}>
-                        <button>START</button>
+                            <button>START</button>
                         </Link>
                     </section>
                 </div>
