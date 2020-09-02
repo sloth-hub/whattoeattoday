@@ -56,14 +56,14 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="container">
+        <div className="home_container">
             {loadedCoords === null ?
                 // null이면
                 <div className="loader">
                     <h2>위치확인 허용을 눌러주세요.</h2>
                 </div>
                 : // null이 아니면
-                < div className="home_container">
+                <div>
                     <section className="home_title">
                         <h1>WHAT TO EAT TODAY ?</h1>
                         <h2>오늘 뭐 먹지?</h2>

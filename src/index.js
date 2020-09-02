@@ -3,7 +3,7 @@ import { HashRouter, Route } from 'react-router-dom';
 import ReactDOM from "react-dom";
 import Home from "./pages/Home";
 import Ask from "./pages/Ask";
-
+import "./index.css";
 
 const App = () => {
   return (
