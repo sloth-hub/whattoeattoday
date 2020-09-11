@@ -3,6 +3,8 @@
    License: none (public domain)
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;500;900&display=swap');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -30,6 +32,9 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background-color: #eff3f7;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 300;
 }
 ol, ul {
 	list-style: none;
@@ -46,6 +51,14 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-.home_container, .ask_container {
-	border: 1px solid #000;
+
+#root, .container {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.container {
+	padding: 70px 50px 50px;
+	width: 80%;
 }

@@ -7,7 +7,7 @@ const Ask = (props) => {
         window.location.replace("/#") // state가 존재하지 않으면
     }
     return (
-        <div className="ask_container">
+        <div className="container">
             <Mood 
             state={props.location.state}
             />

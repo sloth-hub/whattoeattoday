@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Weather from "../components/Weather";
+import "./Home.css";
 
 const API_KEY = "80e4e2378e235fae347d6f18a4538af9";
 
@@ -56,14 +57,14 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="home_container">
+        <div className="container">
             {loadedCoords === null ?
                 // null이면
                 <div className="loader">
                     <h2>위치확인 허용을 눌러주세요.</h2>
                 </div>
                 : // null이 아니면
-                <div>
+                <div className="home_container">
                     <section className="home_title">
                         <h1>WHAT TO EAT TODAY ?</h1>
                         <h2>오늘 뭐 먹지?</h2>
