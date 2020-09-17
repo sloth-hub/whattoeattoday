@@ -31,8 +31,8 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
+	height: 100%;
 	line-height: 1;
-	background-color: #eff3f7;
 	font-family: 'Noto Sans KR', sans-serif;
 	font-weight: 300;
 }
@@ -52,13 +52,22 @@ table {
 	border-spacing: 0;
 }
 
+#root {
+	background-color: #FFAF74;  /* fallback for old browsers */
+	background-image: -webkit-linear-gradient(to bottom right, #FFAF74, #FF6F73);  /* Chrome 10-25, Safari 5.1-6 */
+	background-image: linear-gradient(to bottom right, #FFAF74, #FF6F73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+}
 #root, .container {
-	height: 100%;
 	display: flex;
 	justify-content: center;
 }
 
 .container {
-	padding: 70px 50px 50px;
+	padding: 70px 50px;
 	width: 80%;
 }

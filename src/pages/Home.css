@@ -14,16 +14,25 @@
     line-height: 3em;
 }
 
-.home_title h1 {
-    font-size: 40px;
-    font-weight: 900;
-}
-
-.home_title h2 {
-    font-size: 36px;
-    font-weight: 500;
+.home_title .home_logo {
+    width: 500px;    
 }
 
 .home_weather {
     line-height: 1.5em;
+}
+
+.home_weather .home_loading {
+    width: 150px;
+}
+
+@media (max-width: 768px) {
+    .home_title .home_logo {
+        width: 300px;    
+    }
+
+    .home_weather .home_loading {
+        width: 80px;
+    }
+    
 }

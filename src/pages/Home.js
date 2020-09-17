@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Weather from "../components/Weather";
 import "./Home.css";
+import logoImage from "../images/logo.png";
+import loadingImage from "../images/loading.gif";
 
 const API_KEY = "80e4e2378e235fae347d6f18a4538af9";
 
@@ -66,12 +68,11 @@ const Home = () => {
                 : // null이 아니면
                 <div className="home_container">
                     <section className="home_title">
-                        <h1>WHAT TO EAT TODAY ?</h1>
-                        <h2>오늘 뭐 먹지?</h2>
+                        <img src={logoImage} className="home_logo" alt="WHAT TO EAT TODAT? 오늘 뭐먹지?"/>
                     </section>
                     <section className="home_weather">
                         {state.isLoading ?
-                            <p className="loading_text">Loading..</p> :
+                            <img src={loadingImage} alt="loading..." className="home_loading" /> :
                             <Weather
                                 temp={state.temp}
                                 condition={state.condition}
