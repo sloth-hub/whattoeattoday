@@ -33,6 +33,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	height: 100%;
 	line-height: 1;
+	color: #a03c3c;
 	font-family: 'Noto Sans KR', sans-serif;
 	font-weight: 300;
 }

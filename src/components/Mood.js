@@ -30,7 +30,7 @@ const Mood = ({state}) => {
             <input type="radio" name="mood" value="melancholy" id="melancholy" onChange={handleMoodChange} /><label htmlFor="melancholy">우울함</label>
             <input type="radio" name="mood" value="sad" id="sad" onChange={handleMoodChange} /><label htmlFor="sad">슬픔</label>
             <input type="radio" name="mood" value="angry" id="angry" onChange={handleMoodChange} /><label htmlFor="angry">화남</label>
-            <button className="mood_next" onClick={handleMoodClick}>NEXT</button>
+            <button className="mood_next btn" onClick={handleMoodClick}>NEXT</button>
         </div>
     );
 }

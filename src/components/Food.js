@@ -26,7 +26,7 @@ const Food = ({state, toggle, setToggle}) => {
             <input type="radio" name="taste" value="oily" id="oily" onChange={handleFoodChange} /><label htmlFor="oily">기름진거</label>
             <input type="radio" name="taste" value="light" id="light" onChange={handleFoodChange} /><label htmlFor="light">담백한거</label>
             <input type="radio" name="taste" value="soup" id="soup" onChange={handleFoodChange} /><label htmlFor="soup">호로록 국물있는거</label>
-            <button className="food_next" onClick={handleFoodClick}>NEXT</button>
+            <button className="food_next btn" onClick={handleFoodClick}>NEXT</button>
         </div>
     );
 }

@@ -68,7 +68,9 @@ const Home = () => {
                 : // null이 아니면
                 <div className="home_container">
                     <section className="home_title">
-                        <img src={logoImage} className="home_logo" alt="WHAT TO EAT TODAT? 오늘 뭐먹지?"/>
+                        <h1>WHAT TO EAT TODAY?</h1>
+                        <h2>오늘 뭐 먹지?</h2>
+                        {/* <img src={logoImage} className="home_logo" alt="WHAT TO EAT TODAT? 오늘 뭐먹지?"/> */}
                     </section>
                     <section className="home_weather">
                         {state.isLoading ?
@@ -87,7 +89,7 @@ const Home = () => {
                                 condition: state.condition
                             }
                         }}>
-                            <button>START</button>
+                            <button className="btn">START</button>
                         </Link>
                     </section>
                 </div>
