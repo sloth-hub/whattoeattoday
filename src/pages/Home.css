@@ -1,44 +1,72 @@
+::-webkit-scrollbar {
+    width: 10px;
+  }
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+  }
+::-webkit-scrollbar-thumb:hover{
+  	background: #ffae7475;
+  }
+::-webkit-scrollbar-thumb:active{
+  	background: #ffae74af;
+  }
+
 .btn {
 	border: none;
 	border-radius: 10px;
 	background-color: #FFAF74;  /* fallback for old browsers */
 	background-image: -webkit-linear-gradient(to bottom right, #FFAF74, #FF6F73);  /* Chrome 10-25, Safari 5.1-6 */
 	background-image: linear-gradient(to bottom right, #FFAF74, #FF6F73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	color: #fff;
+    box-shadow: 3px 3px 5px rgba(160, 60, 60, 0.3);
+    color: #fff;
 	font-family: 'Noto Sans KR', sans-serif;
 	font-weight: 500;
 	font-size: 21px;
 	padding: 10px;
 }
 
+.btn:hover {
+    box-shadow: inset 0 3px 5px rgba(160, 60, 60, 0.3);
+}
+
 .btn:focus {
     outline: none;
 }
 
-.btn:hover {
-    box-shadow: inset 0 3px 5px rgba(160, 60, 60, 0.2);
-}
-
 .home_container, .mood_container, .food_container, .result_container {
     background-color: #fff;
+    box-shadow: 5px 5px 20px rgba(160, 60, 60, 0.5);
     border-radius: 20px;
-    padding: 50px;
+    padding: 100px 50px;
     width: 100%;
     min-height: 300px;
     text-align: center;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .home_title, .home_weather {
     margin-bottom: 30px;
 }
 
+.home_title h1, h2 {
+    background: #FFAF74;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom right, #FFAF74, #FF6F73);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom right, #FFAF74, #FF6F73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
 .home_title h1 {
-    font-size: 42px;
+    font-size: 62px;
+    margin-bottom: 10px;
     font-weight: 900;
 }
+
 .home_title h2 {
-    font-size: 31px;
-    font-weight: 500;
+    font-size: 38px;
+    font-weight: 900;
 }
 
 .home_title .home_logo {
@@ -53,9 +81,13 @@
     width: 150px;
 }
 
-.mood_ask {
-    font-size: 21px;
+.mood_ask, .food_ask {
+    font-size: 28px;
     font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.moods, .foods {
     margin-bottom: 20px;
 }
 
@@ -68,4 +100,8 @@
         width: 80px;
     }
     
+}
+
+.list_item img {
+    width: 300px;
 }
