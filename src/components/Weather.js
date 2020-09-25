@@ -5,7 +5,7 @@ const Weather = ({ temp, condition, city }) => {
 
     return (
         <ul>
-            <li>temp: {Math.round(temp)}˚C</li>
+            <li>{Math.round(temp)}˚C</li>
             <li>condition: {condition}</li>
             <li>city: {city}</li>
         </ul>

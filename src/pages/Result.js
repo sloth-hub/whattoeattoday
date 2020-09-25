@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import loadingImage from "../images/loading.gif";
 
 const Result = ({ state }) => {
 
@@ -52,7 +53,7 @@ const Result = ({ state }) => {
     return (
         <div className="result_container">
             {loading.isLoading ?
-                <p>Loading..</p> :
+                <img src={loadingImage} alt="loading..." className="result_loading" /> :
                 <ul>
                     {result.map((f, index) => {
                         return <Result key={index} name={f.name} img={f.img} />

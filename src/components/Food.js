@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Result from "../pages/Result";
+import { Link } from "react-router-dom";
 
 const Food = ({ state, toggle, setToggle }) => {
 

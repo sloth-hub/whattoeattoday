@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Weather from "../components/Weather";
 import "./Home.css";
-import logoImage from "../images/logo.png";
 import loadingImage from "../images/loading.gif";
 
 const API_KEY = "80e4e2378e235fae347d6f18a4538af9";

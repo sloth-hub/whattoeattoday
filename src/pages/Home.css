@@ -11,9 +11,29 @@
   	background: #ffae74af;
   }
 
+#root {
+	background-color: #FFAF74;  /* fallback for old browsers */
+	background-image: -webkit-linear-gradient(to bottom right, #FFAF74, #FF6F73);  /* Chrome 10-25, Safari 5.1-6 */
+	background-image: linear-gradient(to bottom right, #FFAF74, #FF6F73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+}
+#root, .container {
+	display: flex;
+	justify-content: center;
+}
+
+.container {
+	padding: 70px 50px;
+	width: 80%;
+}
+
 .btn {
 	border: none;
-	border-radius: 10px;
+	border-radius: 30px;
 	background-color: #FFAF74;  /* fallback for old browsers */
 	background-image: -webkit-linear-gradient(to bottom right, #FFAF74, #FF6F73);  /* Chrome 10-25, Safari 5.1-6 */
 	background-image: linear-gradient(to bottom right, #FFAF74, #FF6F73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -22,7 +42,8 @@
 	font-family: 'Noto Sans KR', sans-serif;
 	font-weight: 500;
 	font-size: 21px;
-	padding: 10px;
+    padding: 10px;
+    width: 120px;
 }
 
 .btn:hover {
@@ -34,12 +55,12 @@
 }
 
 .home_container, .mood_container, .food_container, .result_container {
-    background-color: #fff;
+    background-color: rgba(255,255,255,0.9);
     box-shadow: 5px 5px 20px rgba(160, 60, 60, 0.5);
     border-radius: 20px;
     padding: 100px 50px;
     width: 100%;
-    min-height: 300px;
+    min-height: 447px;
     text-align: center;
     overflow: scroll;
     overflow-x: hidden;
@@ -75,6 +96,7 @@
 
 .home_weather {
     line-height: 1.5em;
+    padding: 30px;
 }
 
 .home_weather .home_loading {
@@ -84,24 +106,33 @@
 .mood_ask, .food_ask {
     font-size: 28px;
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .moods, .foods {
     margin-bottom: 20px;
 }
 
-@media (max-width: 768px) {
-    .home_title .home_logo {
-        width: 300px;    
-    }
+.list_item img {
+    width: 300px;
+}
 
+.result_loading {
+    position: relative;
+    top: 20%;
+}
+
+@media (max-width: 768px) { 
     .home_weather .home_loading {
         width: 80px;
     }
-    
-}
-
-.list_item img {
-    width: 300px;
+    .home_container, .mood_container, .food_container, .result_container {
+        padding: 70px 50px;
+    }
+    .home_title h1 {
+        font-size: 52px;
+    }
+    .result_loading {
+        width: 150px;
+    }
 }
