@@ -22,12 +22,12 @@
     position: fixed;
 }
 #root, .container {
-	display: flex;
-	justify-content: center;
+	/* display: flex;
+	justify-content: center; */
 }
 
 .container {
-	padding: 70px 50px;
+	margin: 70px auto;
 	width: 80%;
 }
 
@@ -59,7 +59,6 @@
     box-shadow: 5px 5px 20px rgba(160, 60, 60, 0.5);
     border-radius: 20px;
     padding: 100px 50px;
-    width: 100%;
     min-height: 447px;
     text-align: center;
     overflow: scroll;
@@ -120,6 +119,14 @@
 .result_loading {
     position: relative;
     top: 20%;
+}
+
+.footer {
+    font-size: 12px;
+    line-height: 1.5em;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
 }
 
 @media (max-width: 768px) { 

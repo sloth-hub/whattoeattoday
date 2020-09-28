@@ -93,6 +93,14 @@ const Home = () => {
                     </section>
                 </div>
             }
+            <div className="footer">
+                <p>&copy; Chae Hyerin</p>
+                <p>
+                    icon &copy;
+                        <a href="https://www.flaticon.com/kr/authors/bqlqn" title="bqlqn"> bqlqn</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a>
+                </p>
+
+            </div>
         </div >
     );
 }
