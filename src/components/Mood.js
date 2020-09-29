@@ -24,15 +24,18 @@ const Mood = ({ state }) => {
     }
     return (
         <div className="mood_container">
-            <h1 className="mood_ask">당신의 오늘 기분은 어떤가요?</h1>
-            <div className="moods">
-                <input type="radio" name="mood" value="good" id="good" onChange={handleMoodChange} /><label htmlFor="good">좋음</label>
-                <input type="radio" name="mood" value="happy" id="happy" onChange={handleMoodChange} /><label htmlFor="happy">행복함</label>
-                <input type="radio" name="mood" value="melancholy" id="melancholy" onChange={handleMoodChange} /><label htmlFor="melancholy">우울함</label>
-                <input type="radio" name="mood" value="sad" id="sad" onChange={handleMoodChange} /><label htmlFor="sad">슬픔</label>
-                <input type="radio" name="mood" value="angry" id="angry" onChange={handleMoodChange} /><label htmlFor="angry">화남</label>
+            <div className="mood_box">
+                <h1 className="mood_ask">당신의 오늘 기분은 어떤가요?</h1>
+                <div className="moods">
+                    <input type="radio" name="mood" value="good" id="good" onChange={handleMoodChange} /><label htmlFor="good">좋음</label>
+                    <input type="radio" name="mood" value="happy" id="happy" onChange={handleMoodChange} /><label htmlFor="happy">행복함</label>
+                    <input type="radio" name="mood" value="melancholy" id="melancholy" onChange={handleMoodChange} /><label htmlFor="melancholy">우울함</label>
+                    <input type="radio" name="mood" value="sad" id="sad" onChange={handleMoodChange} /><label htmlFor="sad">슬픔</label>
+                    <input type="radio" name="mood" value="angry" id="angry" onChange={handleMoodChange} /><label htmlFor="angry">화남</label>
+                </div>
+                <button className="mood_next btn" onClick={handleMoodClick}>NEXT</button>
             </div>
-            <button className="mood_next btn" onClick={handleMoodClick}>NEXT</button>
+
         </div>
     );
 }

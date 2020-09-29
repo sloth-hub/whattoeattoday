@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Weather from "../components/Weather";
 import "./Home.css";
-import loadingImage from "../images/loading.gif";
 
 const API_KEY = "80e4e2378e235fae347d6f18a4538af9";
 
@@ -73,7 +72,7 @@ const Home = () => {
                     </section>
                     <section className="home_weather">
                         {state.isLoading ?
-                            <img src={loadingImage} alt="loading..." className="home_loading" /> :
+                            <p className="home_loading">loading..</p> :
                             <Weather
                                 temp={state.temp}
                                 condition={state.condition}
