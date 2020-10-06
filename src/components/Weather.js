@@ -45,7 +45,6 @@ const weatherOptions = {
 }
 const Weather = ({ temp, condition }) => {
 
-    
     return (
         <ul>
             <li className="weatherTemp">{Math.round(temp)}˚C</li>

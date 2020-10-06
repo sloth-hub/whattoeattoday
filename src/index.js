@@ -3,7 +3,6 @@ import { HashRouter, Route } from 'react-router-dom';
 import ReactDOM from "react-dom";
 import Home from "./pages/Home";
 import Ask from "./pages/Ask";
-import Result from "./pages/Result";
 import "./reset.css";
 
 const App = () => {

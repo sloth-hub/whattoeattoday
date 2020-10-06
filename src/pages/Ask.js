@@ -1,5 +1,6 @@
 import React from "react";
 import Mood from "../components/Mood";
+import Footer from "../components/Footer";
 
 const Ask = (props) => {
 
@@ -11,6 +12,7 @@ const Ask = (props) => {
             <Mood 
             state={props.location.state}
             />
+            <Footer />
         </div>
     );
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Weather from "../components/Weather";
+import Footer from "../components/Footer";
 import "./Home.css";
 
 const API_KEY = "80e4e2378e235fae347d6f18a4538af9";
@@ -92,14 +93,7 @@ const Home = () => {
                     </section>
                 </div>
             }
-            <div className="footer">
-                <p>&copy; Chae Hyerin</p>
-                <p>
-                    icon &copy;
-                        <a href="https://www.flaticon.com/kr/authors/bqlqn" title="bqlqn"> bqlqn</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a>
-                </p>
-
-            </div>
+            <Footer />
         </div >
     );
 }
