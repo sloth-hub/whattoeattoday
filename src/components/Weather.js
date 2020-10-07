@@ -19,12 +19,8 @@ const weatherOptions = {
         title: "Rain"
     },
     Snow: {
-        iconName: "/images/003-snowy.png",
+        iconName: "/images/025-snow.png",
         title: "Snow"
-    },
-    Atmosphere: {
-        iconName: "/images/009-cloudy.png",
-        title: "Atmosphere"
     },
     Clear: {
         iconName: "/images/005-sun.png",
@@ -42,15 +38,18 @@ const weatherOptions = {
         iconName: "/images/012-windy.png",
         title: "Dust"
     },
+    Tornado: {
+        iconName: "/images/015-tornado.png",
+        title: "Tornado"
+    }
 }
 const Weather = ({ temp, condition }) => {
 
     return (
-        <ul>
-            <li className="weatherTemp">{Math.round(temp)}˚C</li>
-            <li><img src={weatherOptions[condition].iconName} className="weatherIcon" alt={condition} /></li>
-            <li className="weatherTitle">{weatherOptions[condition].title}</li>
-        </ul>
+        <div className="weatherbox">
+            <p className="weatherTemp">{Math.round(temp)}˚C</p>
+            <img src={weatherOptions[condition].iconName} className="weatherIcon" alt={condition} />
+        </div>
     );
 }
 

@@ -61,8 +61,12 @@
     padding: 100px 50px;
     min-height: 447px;
     text-align: center;
-    overflow: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
+}
+
+.result_container {
+    max-height: 447px;
 }
 
 .home_title h1, h2 {
@@ -90,21 +94,25 @@
 }
 
 .home_weather {
-    background: #FFAF74;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom right, #FFAF74, #FF6F73);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom right, #FFAF74, #FF6F73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border-radius: 50px;
-    width: 170px;
+    width: 160px;
     margin: 50px auto 40px;
-    padding: 20px 0;
-    color: #fff;
-    box-shadow: 3px 3px 5px rgba(160, 60, 60, 0.3);
+    padding: 25px 0;
+    box-shadow: inset 3px 3px 6px rgba(160, 60, 60, 0.3);
+}
+
+.home_weather .weatherTemp {
+    background: #FFAF74;
+    background: -webkit-linear-gradient(to bottom right, #FFAF74, #FF6F73);
+    background: linear-gradient(to bottom right, #FFAF74, #FF6F73);
+    -webkit-background-clip: text;
+    background-clip: text; 
+    color: transparent;
 }
 
 .home_weather .weatherIcon {
     width: 70px;
-    filter: invert(100);
-    margin: 10px 0;
+    margin-top: 10px;
 }
 
 .home_weather .home_loading {
@@ -117,8 +125,9 @@
     font-weight: 500;
 }
 
-.home_weather .weatherTitle {
-    margin-bottom: 5px;
+.mood_box, .food_box {
+    position: sticky;
+    top: 35%;
 }
 
 .mood_ask, .food_ask {
@@ -128,11 +137,20 @@
 }
 
 .moods, .foods {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+.result_loading {
+    position: sticky;
+    top: 35%;
 }
 
 .list_item img {
-    width: 300px;
+    width: 80%;
+}
+
+.list_item + .list_item {
+    margin-top : 10px;
 }
 
 .footer {
@@ -166,6 +184,12 @@
     }
     .home_weather .weatherIcon {
         width: 60px;
+    }
+    .mood_ask {
+        font-size: 22px;
+    }
+    .moods {
+        font-size: 14px;
     }
 }
 
