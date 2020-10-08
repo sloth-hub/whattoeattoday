@@ -27,11 +27,31 @@ const Mood = ({ state }) => {
             <div className="mood_box">
                 <h1 className="mood_ask">당신의 오늘 기분은 어떤가요?</h1>
                 <div className="moods">
-                    <input type="radio" name="mood" value="good" id="good" onChange={handleMoodChange} /><label htmlFor="good">좋음</label>
-                    <input type="radio" name="mood" value="happy" id="happy" onChange={handleMoodChange} /><label htmlFor="happy">행복함</label>
-                    <input type="radio" name="mood" value="melancholy" id="melancholy" onChange={handleMoodChange} /><label htmlFor="melancholy">우울함</label>
-                    <input type="radio" name="mood" value="sad" id="sad" onChange={handleMoodChange} /><label htmlFor="sad">슬픔</label>
-                    <input type="radio" name="mood" value="angry" id="angry" onChange={handleMoodChange} /><label htmlFor="angry">화남</label>
+                    <label htmlFor="good">
+                        <input type="radio" name="mood" value="good" id="good" onChange={handleMoodChange} />
+                        <span className="indicator"><span className="circle"></span></span>
+                        <span className="text">좋음</span>
+                    </label>
+                    <label htmlFor="happy">
+                        <input type="radio" name="mood" value="happy" id="happy" onChange={handleMoodChange} />
+                        <span className="indicator"><span className="circle"></span></span>
+                        <span className="text">행복함</span>
+                    </label>
+                    <label htmlFor="melancholy">
+                        <input type="radio" name="mood" value="melancholy" id="melancholy" onChange={handleMoodChange} />
+                        <span className="indicator"><span className="circle"></span></span>
+                        <span className="text">우울함</span>
+                    </label>
+                    <label htmlFor="sad">
+                        <input type="radio" name="mood" value="sad" id="sad" onChange={handleMoodChange} />
+                        <span className="indicator"><span className="circle"></span></span>
+                        <span className="text">슬픔</span>
+                    </label>
+                    <label htmlFor="angry">
+                        <input type="radio" name="mood" value="angry" id="angry" onChange={handleMoodChange} />
+                        <span className="indicator"><span className="circle"></span></span>
+                        <span className="text">화남</span>
+                    </label>
                 </div>
                 <button className="mood_next btn" onClick={handleMoodClick}>NEXT</button>
             </div>

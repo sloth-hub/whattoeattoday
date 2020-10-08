@@ -21,41 +21,14 @@
     right: 0;
     position: fixed;
 }
-#root, .container {
-	/* display: flex;
-	justify-content: center; */
-}
 
 .container {
 	margin: 130px auto;
-    width: 60%;
-}
-
-.btn {
-	border: none;
-	border-radius: 30px;
-	background-color: #FFAF74;  /* fallback for old browsers */
-	background-image: -webkit-linear-gradient(to bottom right, #FFAF74, #FF6F73);  /* Chrome 10-25, Safari 5.1-6 */
-	background-image: linear-gradient(to bottom right, #FFAF74, #FF6F73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    box-shadow: 3px 3px 5px rgba(160, 60, 60, 0.3);
-    color: #fff;
-	font-family: 'Noto Sans KR', sans-serif;
-	font-weight: 500;
-	font-size: 21px;
-    padding: 10px;
-    width: 120px;
-}
-
-.btn:hover {
-    box-shadow: inset 0 3px 5px rgba(160, 60, 60, 0.3);
-}
-
-.btn:focus {
-    outline: none;
+    width: 800px;
 }
 
 .home_container, .mood_container, .food_container, .result_container {
-    background-color: rgba(255,255,255,0.9);
+    background-color: #faede9;
     box-shadow: 5px 5px 20px rgba(160, 60, 60, 0.5);
     border-radius: 20px;
     padding: 100px 50px;
@@ -67,6 +40,27 @@
 
 .result_container {
     max-height: 447px;
+}
+
+.btn {
+	border: none;
+    border-radius: 30px;
+    background-color: #faede9;
+    box-shadow: 5px 5px 8px rgba(160, 60, 60, 0.3), -6px -5px 8px rgba(255,255,255,0.8), inset 3px 3px 8px rgba(160, 60, 60, 0.05);
+    color: #a03c3c4d;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 500;
+	font-size: 21px;
+    padding: 10px;
+    width: 120px;
+}
+
+.btn:active {
+    box-shadow: inset 3px 3px 10px rgba(160, 60, 60, 0.3), inset -3px 3px 10px rgba(255,255,255,0.8);
+    color: rgba(160, 60, 60, 0.6);
+}
+.btn:focus {
+    outline: none;
 }
 
 .home_title h1, h2 {
@@ -96,9 +90,14 @@
 .home_weather {
     border-radius: 50px;
     width: 160px;
+    height: 154px;
     margin: 50px auto 40px;
-    padding: 25px 0;
-    box-shadow: inset 3px 3px 6px rgba(160, 60, 60, 0.3);
+    box-shadow: inset 3px 3px 8px rgba(160, 60, 60, 0.3), inset -3px -3px 8px rgba(255,255,255,0.8);
+}
+
+.home_weather .weatherbox {
+    position: relative;
+    top: 28px;
 }
 
 .home_weather .weatherTemp {
@@ -117,7 +116,8 @@
 
 .home_weather .home_loading {
     font-size: 18px;
-    padding: 30px 0;
+    position: relative;
+    top: 40%;
 }
 
 .home_weather .weatherTemp {
@@ -126,8 +126,38 @@
 }
 
 .mood_box, .food_box {
-    position: sticky;
-    top: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: inherit;
+}
+
+.moods label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin: 20px 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.moods input[type='radio'] {
+    opacity: 0;
+}
+.moods .text {
+    padding-left: 10px;
+}
+
+.moods .indicator {
+    box-shadow: inset 1px 1px 2px rgba(160, 60, 60, 0.3), inset -1px 1px 2px rgba(255,255,255,0.8);
+    border-radius: 50%;
+    cursor: pointer;
+    height: 20px;
+    position: absolute;
+    width: 20px;
+    display: block;
 }
 
 .mood_ask, .food_ask {
@@ -139,6 +169,8 @@
 .moods, .foods {
     margin-bottom: 40px;
 }
+
+
 
 .result_loading {
     position: sticky;
@@ -161,11 +193,16 @@
     padding: 30px 0;
 }
 
+@media (max-width: 1024px) { 
+    .container {
+        width: 80%;
+    }
+}
+
 @media (max-width: 797px) { 
 
     .container {
         margin: 70px auto;
-        width: 80%;
     }
     .home_container, .mood_container, .food_container, .result_container {
         padding: 60px 40px;
