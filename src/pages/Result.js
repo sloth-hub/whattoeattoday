@@ -6,7 +6,7 @@ const Result = ({ state }) => {
     const [loading, setLoading] = useState({
         isLoading: true
     });
-    
+
     const [result, setResult] = useState('');
 
     useEffect(() => {
@@ -51,14 +51,17 @@ const Result = ({ state }) => {
 
     return (
         <div className="result_container">
-            {loading.isLoading ?
-                <img src="/images/loading.gif" alt="loading..." className="result_loading" /> :
-                <ul>
-                    {result.map((f, index) => {
-                        return <Result key={index} name={f.name} img={f.img} />
-                    })}
-                </ul>
-            }
+            <div className="result_wrap">
+                {loading.isLoading ?
+                    <img src="/images/loading.gif" alt="loading..." className="result_loading" /> :
+                    <ul>
+                        {result.map((f, index) => {
+                            return <Result key={index} name={f.name} img={f.img} />
+                        })}
+                    </ul>
+                }
+            </div>
+
         </div >
     );
 }

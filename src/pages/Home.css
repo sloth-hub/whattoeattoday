@@ -1,14 +1,19 @@
 ::-webkit-scrollbar {
     width: 10px;
-  }
+}
 ::-webkit-scrollbar-thumb{
     border-radius: 10px;
+    transition: .2 linear;
   }
 ::-webkit-scrollbar-thumb:hover{
-      background: transparent;
-      box-shadow: inset -2px -2px 3px rgba(160, 60, 60, 0.3), -6px -5px 8px rgba(255,255,255,0.8), inset 3px 3px 8px rgba(160, 60, 60, 0.05);
-  }
-
+    background: #faede9;
+    box-shadow: inset -2px -2px 3px rgba(160, 60, 60, 0.2), inset -2px -2px 3px rgba(255,255,255,0.8), inset 1px 1px 2px rgba(160, 60, 60, 0.05);
+    transition: .2 linear;
+}
+::-webkit-scrollbar-thumb:active {
+    box-shadow: inset -2px -2px 3px rgba(160, 60, 60, 0.3), inset -2px -2px 3px rgba(255,255,255,0.8), inset 1px 1px 2px rgba(160, 60, 60, 0.05);
+    transition: .2 linear;
+}
 #root {
 	background-color: #FFAF74;  /* fallback for old browsers */
 	background-image: -webkit-linear-gradient(to bottom right, #FFAF74, #FF6F73);  /* Chrome 10-25, Safari 5.1-6 */
@@ -21,7 +26,7 @@
 }
 
 .container {
-	margin: 130px auto;
+	margin: 126px auto 0;
     width: 800px;
 }
 
@@ -29,15 +34,26 @@
     background-color: #faede9;
     box-shadow: 5px 5px 20px rgba(160, 60, 60, 0.5);
     border-radius: 20px;
-    padding: 100px 50px;
     min-height: 447px;
     text-align: center;
-    overflow-y: auto;
     overflow-x: hidden;
 }
 
+.home_container, .mood_container, .food_container {
+    padding: 100px 50px;
+}
+
 .result_container {
-    max-height: 447px;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    height: 647px;
+    overflow: hidden;
+}
+
+.result_wrap {
+    height: 547px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .btn {
@@ -56,7 +72,8 @@
 
 .btn:hover {
     color: rgba(160, 60, 60, 0.5);
-    transition: color .2s linear;
+    box-shadow: 3px 3px 8px rgba(160, 60, 60, 0.3), -4px -3px 8px rgba(255,255,255,0.8), inset 3px 3px 8px rgba(160, 60, 60, 0.05);
+    transition: .2s linear;
 }
 
 .btn:active {
@@ -233,7 +250,7 @@
     line-height: 1.5em;
     color: #fff;
     text-align: center;
-    padding: 30px 0;
+    padding: 30px 0 30px;
 }
 
 @media (max-width: 1024px) { 
@@ -243,7 +260,6 @@
 }
 
 @media (max-width: 797px) { 
-
     .container {
         margin: 70px auto;
     }

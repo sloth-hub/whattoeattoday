@@ -29,23 +29,23 @@ const Mood = ({ state }) => {
                 <div className="moods">
                     <div className="radiobox">
                         <input type="radio" name="mood" value="good" id="good" onChange={handleMoodChange} />
-                        <label htmlFor="good"><span className="text">좋음🙂</span></label>
+                        <label htmlFor="good"><span className="text">좋음<span role="img" aria-label="good">🙂</span></span></label>
                     </div>
                     <div className="radiobox">
                         <input type="radio" name="mood" value="happy" id="happy" onChange={handleMoodChange} />
-                        <label htmlFor="happy"><span className="text">행복함🥰</span></label>
+                        <label htmlFor="happy"><span className="text">행복함<span role="img" aria-label="happy">🥰</span></span></label>
                     </div>
                     <div className="radiobox">
                         <input type="radio" name="mood" value="melancholy" id="melancholy" onChange={handleMoodChange} />
-                        <label htmlFor="melancholy"><span className="text">우울함😔</span></label>
+                        <label htmlFor="melancholy"><span className="text">우울함<span role="img" aria-label="melancholy">😔</span></span></label>
                     </div>
                     <div className="radiobox">
                         <input type="radio" name="mood" value="sad" id="sad" onChange={handleMoodChange} />
-                        <label htmlFor="sad"><span className="text">슬픔😥</span></label>
+                        <label htmlFor="sad"><span className="text">슬픔<span role="img" aria-label="sad">😥</span></span></label>
                     </div>
                     <div className="radiobox">
                         <input type="radio" name="mood" value="angry" id="angry" onChange={handleMoodChange} />
-                        <label htmlFor="angry"><span className="text">화남😡</span></label>
+                        <label htmlFor="angry"><span className="text">화남<span role="img" aria-label="angry">😡</span></span></label>
                     </div>
                 </div>
                 <button className="mood_next btn" onClick={handleMoodClick}>NEXT</button>
