@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Result = ({ state }) => {
 
@@ -43,10 +46,18 @@ const Result = ({ state }) => {
 
     const Result = ({ img, name }) => {
         return (
-            <li className="list_item">
+            <div className="list_item">
                 <img src={img} alt={name} />
-            </li>
+            </div>
         )
+    }
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
     }
 
     return (
@@ -54,11 +65,11 @@ const Result = ({ state }) => {
             <div className="result_wrap">
                 {loading.isLoading ?
                     <img src="/images/loading.gif" alt="loading..." className="result_loading" /> :
-                    <ul>
+                    <Slider {...settings}>
                         {result.map((f, index) => {
                             return <Result key={index} name={f.name} img={f.img} />
                         })}
-                    </ul>
+                    </Slider>
                 }
             </div>
 

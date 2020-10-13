@@ -37,24 +37,24 @@
     min-height: 447px;
     text-align: center;
     overflow-x: hidden;
-}
-
-.home_container, .mood_container, .food_container {
     padding: 100px 50px;
 }
 
+.home_container, .mood_container, .food_container {
+    
+}
+/* 
 .result_container {
     padding: 50px 20px;
     box-sizing: border-box;
     height: 647px;
     overflow: hidden;
-}
+} */
 
-.result_wrap {
-    height: 547px;
+/* .result_wrap {
     overflow-y: auto;
     overflow-x: hidden;
-}
+} */
 
 .btn {
 	border: none;
@@ -241,9 +241,9 @@
     width: 80%;
 }
 
-.list_item + .list_item {
+/* .list_item + .list_item {
     margin-top : 10px;
-}
+} */
 
 .footer {
     font-size: 12px;
