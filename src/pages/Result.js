@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Slider from "react-slick";
+import Fade from "react-reveal/Fade";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -11,6 +12,7 @@ const Result = ({ state }) => {
     });
 
     const [result, setResult] = useState('');
+    const [foodName, setFoodName] = useState('');
 
     useEffect(() => {
         GetFood();
@@ -44,11 +46,19 @@ const Result = ({ state }) => {
         setLoading({ isLoading: false });
     }
 
+    const changeName = () => {
+        let current = document.querySelector("div.slick-current");
+        let currentFood = current.querySelector("img.list_item").getAttribute("alt");
+
+        setFoodName(currentFood);
+        console.log(currentFood);
+    }
+
     const Result = ({ img, name }) => {
         return (
-            <div className="list_item">
-                <img src={img} alt={name} />
-            </div>
+            <Fade>
+                <img src={img} alt={name} className="list_item" />
+            </Fade>
         )
     }
 
@@ -71,8 +81,9 @@ const Result = ({ state }) => {
                         })}
                     </Slider>
                 }
-            </div>
 
+            </div>
+            <h1>{foodName}, 어떠세요?</h1>
         </div >
     );
 }
