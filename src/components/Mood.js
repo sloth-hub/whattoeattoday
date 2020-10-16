@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Food from "../components/Food";
+import Fade from "react-reveal/Fade";
 
 const Mood = ({ state }) => {
 
@@ -24,33 +25,34 @@ const Mood = ({ state }) => {
     }
     return (
         <div className="mood_container">
-            <div className="mood_box">
-                <h1 className="mood_ask">당신의 오늘 기분은 어떤가요?</h1>
-                <div className="moods">
-                    <div className="radiobox">
-                        <input type="radio" name="mood" value="good" id="good" onChange={handleMoodChange} />
-                        <label htmlFor="good"><span className="text">좋음<span role="img" aria-label="good">🙂</span></span></label>
+            <Fade>
+                <div className="mood_box">
+                    <h1 className="mood_ask">당신의 오늘 기분은 어떤가요?</h1>
+                    <div className="moods">
+                        <div className="radiobox">
+                            <input type="radio" name="mood" value="good" id="good" onChange={handleMoodChange} />
+                            <label htmlFor="good"><span className="text">좋음<span role="img" aria-label="good">🙂</span></span></label>
+                        </div>
+                        <div className="radiobox">
+                            <input type="radio" name="mood" value="happy" id="happy" onChange={handleMoodChange} />
+                            <label htmlFor="happy"><span className="text">행복함<span role="img" aria-label="happy">🥰</span></span></label>
+                        </div>
+                        <div className="radiobox">
+                            <input type="radio" name="mood" value="melancholy" id="melancholy" onChange={handleMoodChange} />
+                            <label htmlFor="melancholy"><span className="text">우울함<span role="img" aria-label="melancholy">😔</span></span></label>
+                        </div>
+                        <div className="radiobox">
+                            <input type="radio" name="mood" value="sad" id="sad" onChange={handleMoodChange} />
+                            <label htmlFor="sad"><span className="text">슬픔<span role="img" aria-label="sad">😥</span></span></label>
+                        </div>
+                        <div className="radiobox">
+                            <input type="radio" name="mood" value="angry" id="angry" onChange={handleMoodChange} />
+                            <label htmlFor="angry"><span className="text">화남<span role="img" aria-label="angry">😡</span></span></label>
+                        </div>
                     </div>
-                    <div className="radiobox">
-                        <input type="radio" name="mood" value="happy" id="happy" onChange={handleMoodChange} />
-                        <label htmlFor="happy"><span className="text">행복함<span role="img" aria-label="happy">🥰</span></span></label>
-                    </div>
-                    <div className="radiobox">
-                        <input type="radio" name="mood" value="melancholy" id="melancholy" onChange={handleMoodChange} />
-                        <label htmlFor="melancholy"><span className="text">우울함<span role="img" aria-label="melancholy">😔</span></span></label>
-                    </div>
-                    <div className="radiobox">
-                        <input type="radio" name="mood" value="sad" id="sad" onChange={handleMoodChange} />
-                        <label htmlFor="sad"><span className="text">슬픔<span role="img" aria-label="sad">😥</span></span></label>
-                    </div>
-                    <div className="radiobox">
-                        <input type="radio" name="mood" value="angry" id="angry" onChange={handleMoodChange} />
-                        <label htmlFor="angry"><span className="text">화남<span role="img" aria-label="angry">😡</span></span></label>
-                    </div>
+                    <button className="mood_next btn" onClick={handleMoodClick}>NEXT</button>
                 </div>
-                <button className="mood_next btn" onClick={handleMoodClick}>NEXT</button>
-            </div>
-
+            </Fade>
         </div>
     );
 }

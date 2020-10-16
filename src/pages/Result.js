@@ -1,33 +1,28 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Slider from "react-slick";
 import Fade from "react-reveal/Fade";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 const Result = ({ state }) => {
 
     const [loading, setLoading] = useState({
         isLoading: true
-    });
-
-    const [result, setResult] = useState('');
-    const [foodName, setFoodName] = useState('');
+    }), [result, setResult] = useState(''),
+        [foodName, setFoodName] = useState('');
+    
+    let slideIndex = 1;
 
     useEffect(() => {
-        GetFood();
+        getFood();
     }, []);
 
-    const GetFood = async () => {
+    const getFood = async () => {
         const {
             data: {
                 foods
             }
         } = await axios.get("https://whattoeattoday-5c793.firebaseio.com/.json");
         showFood(foods);
-    }
-
-    const showFood = (foods) => {
+    }, showFood = (foods) => {
 
         let foodTemp;
         if (state.temp < 10) { // 10도 미만이면
@@ -44,46 +39,52 @@ const Result = ({ state }) => {
 
         setResult(resultList);
         setLoading({ isLoading: false });
-    }
+        setFoodName(resultList[0].name);
 
-    const changeName = () => {
-        let current = document.querySelector("div.slick-current");
-        let currentFood = current.querySelector("img.list_item").getAttribute("alt");
+    }, nextSlides = (n) => {
 
-        setFoodName(currentFood);
-        console.log(currentFood);
-    }
+        showSlides(slideIndex += n);
 
-    const Result = ({ img, name }) => {
+    }, showSlides = (n) => {
+        const list = document.querySelector("div.result_list");
+        const item = list.children;
+        console.log(item);
+        if (n > item.length) {
+            slideIndex = 1;
+        } else if (n < 1) {
+            slideIndex = item.length;
+        }
+        for (let i = 0; i < item.length; i++) {
+            item[i].style.display = "none";
+        }
+        item[slideIndex - 1].style.display = "initial";
+
+        //    let currentFood = list.firstElementChild.getAttribute("alt");
+        //    setFoodName(currentFood);
+        //     console.log(currentFood);
+
+    }, Result = ({ img, name }) => {
         return (
-            <Fade>
-                <img src={img} alt={name} className="list_item" />
-            </Fade>
+            <img src={img} alt={name} className="list_item" />
         )
-    }
-
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
     }
 
     return (
         <div className="result_container">
-            <div className="result_wrap">
+            <Fade>
                 {loading.isLoading ?
                     <img src="/images/loading.gif" alt="loading..." className="result_loading" /> :
-                    <Slider {...settings}>
-                        {result.map((f, index) => {
-                            return <Result key={index} name={f.name} img={f.img} />
-                        })}
-                    </Slider>
+                    <div className="result_wrap">
+                        <div className="result_list">
+                            {result.map((f, index) => {
+                                return <Result key={index} name={f.name} img={f.img} />
+                            })}
+                        </div>
+                        <h1 className="result_title"><span>{foodName}</span> 어떠세요?</h1>
+                        <button className="btn" onClick={() => nextSlides(1)}>다른거!</button>
+                    </div>
                 }
-
-            </div>
-            <h1>{foodName}, 어떠세요?</h1>
+            </Fade>
         </div >
     );
 }

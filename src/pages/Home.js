@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Fade from "react-reveal/Fade";
 import Weather from "../components/Weather";
 import Footer from "../components/Footer";
 import "./Home.css";
@@ -74,10 +75,12 @@ const Home = () => {
                     <section className="home_weather">
                         {state.isLoading ?
                             <p className="home_loading">loading..</p> :
-                            <Weather
-                                temp={state.temp}
-                                condition={state.condition}
-                                city={state.city} />
+                            <Fade>
+                                <Weather
+                                    temp={state.temp}
+                                    condition={state.condition}
+                                    city={state.city} />
+                            </Fade>
                         }
                     </section>
                     <section className="home_start">

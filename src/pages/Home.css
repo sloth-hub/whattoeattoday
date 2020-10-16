@@ -40,9 +40,6 @@
     padding: 100px 50px;
 }
 
-.home_container, .mood_container, .food_container {
-    
-}
 /* 
 .result_container {
     padding: 50px 20px;
@@ -232,19 +229,42 @@
     margin-bottom: 40px;
 }
 
-.result_loading {
-    position: sticky;
-    top: 35%;
+.result_list {
+    position: relative;
+}
+
+.result_list::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(250, 237, 233, 0) 90%,rgba(250, 237, 233, 1) 100%);
 }
 
 .list_item {
     width: 80%;
     margin: auto;
+    border-radius: 0 0 20px 20px;
+    display: none;
 }
 
-/* .list_item + .list_item {
-    margin-top : 10px;
-} */
+.list_item:nth-child(1) {
+    display: initial;
+}
+
+.result_wrap .result_title {
+    font-size: 28px;
+    margin: 30px 0;
+}
+
+.result_title span {
+    font-weight: 500;
+}
+
+.result_loading {
+    position: sticky;
+    top: 35%;
+}
 
 .footer {
     font-size: 12px;
@@ -304,5 +324,8 @@
     .home_weather {
         width: 150px;
         margin: 30px auto;
+    }
+    .result_wrap .result_title {
+        font-size: 24px;
     }
 }
