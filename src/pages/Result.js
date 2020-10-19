@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import Fade from "react-reveal/Fade";
 
@@ -6,9 +7,9 @@ const Result = ({ state }) => {
 
     const [loading, setLoading] = useState({
         isLoading: true
-    }), [result, setResult] = useState(''),
-        [foodName, setFoodName] = useState('');
-    
+    }), [result, setResult] = useState('')
+    ,[foodName, setFoodName] = useState('');
+
     let slideIndex = 1;
 
     useEffect(() => {
@@ -22,7 +23,8 @@ const Result = ({ state }) => {
             }
         } = await axios.get("https://whattoeattoday-5c793.firebaseio.com/.json");
         showFood(foods);
-    }, showFood = (foods) => {
+    }, 
+    showFood = (foods) => {
 
         let foodTemp;
         if (state.temp < 10) { // 10도 미만이면
@@ -40,15 +42,13 @@ const Result = ({ state }) => {
         setResult(resultList);
         setLoading({ isLoading: false });
         setFoodName(resultList[0].name);
-
-    }, nextSlides = (n) => {
-
+    }, 
+    nextSlides = (n) => {
         showSlides(slideIndex += n);
-
-    }, showSlides = (n) => {
+    }, 
+    showSlides = (n) => {
         const list = document.querySelector("div.result_list");
         const item = list.children;
-        console.log(item);
         if (n > item.length) {
             slideIndex = 1;
         } else if (n < 1) {
@@ -56,16 +56,20 @@ const Result = ({ state }) => {
         }
         for (let i = 0; i < item.length; i++) {
             item[i].style.display = "none";
+            item[i].classList.remove("active");
         }
         item[slideIndex - 1].style.display = "initial";
+        item[slideIndex - 1].classList.add("active");
 
-        //    let currentFood = list.firstElementChild.getAttribute("alt");
-        //    setFoodName(currentFood);
-        //     console.log(currentFood);
+        let currentFood = list.querySelector(".active").getAttribute("alt");
+        document.querySelector("span.foodName").innerText = currentFood;
 
-    }, Result = ({ img, name }) => {
+    },
+    Result = ({ img, name }) => {
         return (
-            <img src={img} alt={name} className="list_item" />
+            <Fade>
+                <img src={img} alt={name} className="list_item" />
+            </Fade>
         )
     }
 
@@ -80,8 +84,11 @@ const Result = ({ state }) => {
                                 return <Result key={index} name={f.name} img={f.img} />
                             })}
                         </div>
-                        <h1 className="result_title"><span>{foodName}</span> 어떠세요?</h1>
-                        <button className="btn" onClick={() => nextSlides(1)}>다른거!</button>
+                        <h1 className="result_title"><span className="foodName">{foodName}</span> 어떠세요?</h1>
+                        <div className="result_btn">
+                            <button className="nextBtn btn" onClick={() => nextSlides(1)}>다른거!</button>
+                            <Link to="/"><button className="homeBtn btn">홈으로</button></Link>
+                        </div>
                     </div>
                 }
             </Fade>

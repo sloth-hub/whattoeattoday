@@ -66,35 +66,37 @@ const Home = () => {
                     <h2>위치확인 허용을 눌러주세요.</h2>
                 </div>
                 : // null이 아니면
-                <div className="home_container">
-                    <section className="home_title">
-                        <h1>WHAT TO EAT TODAY?</h1>
-                        <h2>오늘 뭐 먹지?</h2>
-                        {/* <img src={logoImage} className="home_logo" alt="WHAT TO EAT TODAT? 오늘 뭐먹지?"/> */}
-                    </section>
-                    <section className="home_weather">
-                        {state.isLoading ?
-                            <p className="home_loading">loading..</p> :
-                            <Fade>
-                                <Weather
-                                    temp={state.temp}
-                                    condition={state.condition}
-                                    city={state.city} />
-                            </Fade>
-                        }
-                    </section>
-                    <section className="home_start">
-                        <Link to={{
-                            pathname: "/ask",
-                            state: {
-                                temp: state.temp,
-                                condition: state.condition
+                <Fade>
+                    <div className="home_container">
+                        <section className="home_title">
+                            <h1>WHAT TO EAT TODAY?</h1>
+                            <h2>오늘 뭐 먹지?</h2>
+                            {/* <img src={logoImage} className="home_logo" alt="WHAT TO EAT TODAT? 오늘 뭐먹지?"/> */}
+                        </section>
+                        <section className="home_weather">
+                            {state.isLoading ?
+                                <p className="home_loading">loading..</p> :
+                                <Fade>
+                                    <Weather
+                                        temp={state.temp}
+                                        condition={state.condition}
+                                        city={state.city} />
+                                </Fade>
                             }
-                        }}>
-                            <button className="btn">START</button>
-                        </Link>
-                    </section>
-                </div>
+                        </section>
+                        <section className="home_start">
+                            <Link to={{
+                                pathname: "/ask",
+                                state: {
+                                    temp: state.temp,
+                                    condition: state.condition
+                                }
+                            }}>
+                                <button className="btn">START</button>
+                            </Link>
+                        </section>
+                    </div>
+                </Fade>
             }
             <Footer />
         </div >
