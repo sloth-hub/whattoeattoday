@@ -3,43 +3,43 @@ import PropTypes from "prop-types";
 
 const weatherOptions = {
     Haze: {
-        iconName: "/images/009-cloudy.png",
+        iconName: "./images/009-cloudy.png",
         title: "Haze"
     },
     Thunderstorm: {
-        iconName: "/images/013-thunder.png",
+        iconName: "./images/013-thunder.png",
         title: "Thunderstrom"
     },
     Drizzle: {
-        iconName: "/images/021-rain.png",
+        iconName: "./images/021-rain.png",
         title: "Drizzle"
     },
     Rain: {
-        iconName: "/images/002-rainy.png",
+        iconName: "./images/002-rainy.png",
         title: "Rain"
     },
     Snow: {
-        iconName: "/images/025-snow.png",
+        iconName: "./images/025-snow.png",
         title: "Snow"
     },
     Clear: {
-        iconName: "/images/005-sun.png",
+        iconName: "./images/005-sun.png",
         title: "Clear"
     },
     Clouds: {
-        iconName: "/images/001-cloud.png",
+        iconName: "./images/001-cloud.png",
         title: "Clouds"
     },
     Mist: {
-        iconName: "/images/016-mist.png",
+        iconName: "./images/016-mist.png",
         title: "Mist"
     },
     Dust: {
-        iconName: "/images/012-windy.png",
+        iconName: "./images/012-windy.png",
         title: "Dust"
     },
     Tornado: {
-        iconName: "/images/015-tornado.png",
+        iconName: "./images/015-tornado.png",
         title: "Tornado"
     }
 }

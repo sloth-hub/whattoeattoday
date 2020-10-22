@@ -77,7 +77,7 @@ const Result = ({ state }) => {
         <div className="result_container">
             <Fade>
                 {loading.isLoading ?
-                    <img src="/images/loading.gif" alt="loading..." className="result_loading" /> :
+                    <img src="./images/loading.gif" alt="loading..." className="result_loading" /> :
                     <div className="result_wrap">
                         <div className="result_list">
                             {result.map((f, index) => {
