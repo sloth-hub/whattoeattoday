@@ -154,8 +154,64 @@
     cursor: pointer;
     position: relative;
 }
+.moods {
+    background-color: #faede9;
+    box-shadow: 5px 5px 8px rgba(160, 60, 60, 0.3), -6px -5px 8px rgba(255,255,255,0.8), inset 3px 3px 8px rgba(160, 60, 60, 0.05);
+	padding: 0.2rem 0.4rem;
+	border-radius: 2.2rem
+}
+.moods input[type="radio"] {
+	position: absolute;
+	opacity: 0;
+}
 
-.moods input[type='radio'], .foods input[type='radio'] {
+.moods img {
+    filter: brightness(300%);
+	height: 3rem;
+	width: 3rem;
+	margin: 0.3rem;
+}
+
+.moods input + img {
+	cursor: pointer;
+}
+
+.moods input[type="radio"] + img {
+	-webkit-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+
+.moods input[class="good"]:hover + img,
+.moods input[class="good"]:checked + img,
+.moods input[class="good"]:focus + img {
+	filter: brightness(100%);
+}
+
+.moods input[class="happy"]:hover + img,
+.moods input[class="happy"]:checked + img,
+.moods input[class="happy"]:focus + img {
+	filter: brightness(100%);
+}
+
+.moods input[class="melancholy"]:hover + img,
+.moods input[class="melancholy"]:checked + img,
+.moods input[class="melancholy"]:focus + img {
+	filter: brightness(100%);
+}
+
+.moods input[class="sad"]:hover + img,
+.moods input[class="sad"]:checked + img,
+.moods input[class="sad"]:focus + img {
+	filter: brightness(100%);
+}
+
+.moods input[class="angry"]:hover + img,
+.moods input[class="angry"]:checked + img,
+.moods input[class="angry"]:focus + img {
+	filter: brightness(100%);
+}
+
+.foods input[type='radio'] {
     opacity: 0;
     width: 1px;
     height: 1px;
@@ -163,7 +219,7 @@
     overflow: hidden;
 }
 
-.moods label::before, .foods label::before {
+.foods label::before {
     box-shadow: inset 2px 2px 3px rgba(160, 60, 60, 0.3), inset -2px 2px 3px rgba(255,255,255,0.8);
     border-radius: 50%;
     cursor: pointer;
@@ -174,14 +230,13 @@
     content: '';
 }
 
-.moods label::after, .foods label::after {
+.foods label::after {
     content: '';
     width: 1px;
     height: 1px;
     opacity: 0;
 }
 
-.moods input[type='radio']:checked + label:after,
 .foods input[type='radio']:checked + label:after {
     border-radius: 50%;
     width: 11px;
@@ -198,15 +253,14 @@
     transition: opacity .2s linear;
 }
 
-.moods .text, .foods .text {
+.foods .text {
     cursor: pointer;
     padding-left: 30px;
     opacity: .6;
     transition: opacity .2s linear, transform .2s ease-out;
 }
-.moods input[type='radio']:focus ~ label .text,
-.foods input[type='radio']:focus ~ label .text
- {
+
+.foods input[type='radio']:focus ~ label .text {
     transform: translate3d(8px, 0, 0);
     opacity: 1;
 }
