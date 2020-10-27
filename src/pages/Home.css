@@ -23,10 +23,11 @@
     bottom: 0;
     right: 0;
     position: fixed;
+    display: flex;
 }
 
 .container {
-	margin: 126px auto 0;
+	margin: auto;
     width: 800px;
 }
 
@@ -39,11 +40,6 @@
     overflow-x: hidden;
     padding: 100px 50px;
 }
-
-/* .result_wrap {
-    overflow-y: auto;
-    overflow-x: hidden;
-} */
 
 .btn {
 	border: none;
@@ -276,7 +272,7 @@
 }
 
 .result_container {
-    padding: 70px 50px;
+    padding: 50px;
     box-sizing: border-box;
     height: 647px;
 }
@@ -331,13 +327,12 @@
     line-height: 1.5em;
     color: #fff;
     text-align: center;
-    padding: 30px 0 30px;
+    padding: 30px 0 0;
 }
 
 @media (max-width: 1024px) { 
     .container {
         width: 80%;
-        margin: 70px auto;
     }
 }
 
@@ -371,11 +366,9 @@
 }
 
 @media (max-width: 480px) {
-    .container {
-        margin: 30px auto;
-    }
+
     .home_container, .mood_container, .food_container, .result_container {
-        min-height: auto;
+        /* min-height: auto; */
         padding: 40px 30px;
     }
     .home_title h1 {
