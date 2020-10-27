@@ -4,11 +4,7 @@ const Footer = () => {
 
     return (
         <div className="footer">
-            <p>&copy; Chae Hyerin</p>
-            <p>
-                <span>icon &copy;</span>
-                <a href="https://www.flaticon.com/kr/authors/bqlqn" title="bqlqn"> bqlqn</a> from <a href="https://www.flaticon.com/kr/" title="Flaticon"> www.flaticon.com</a>
-            </p>
+            <p>Chae Hyerin &copy; <a href="https://github.com/sloth-hub/whattoeattoday" target="_blank">github</a></p>
         </div>
     );
 }

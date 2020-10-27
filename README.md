@@ -5,3 +5,6 @@ What to eat today?는 오늘의 기분과 날씨를 조합해 메뉴를 추천�
 
 [SITE](https://sloth-hub.github.io/whattoeattoday/)
 
+## COPYING / LICENSE
++ Weather Icons made by [bqlqn](https://www.flaticon.com/kr/authors/bqlqn)  
++ Emotion Icons made by [freepik](https://www.flaticon.com/authors/freepik)

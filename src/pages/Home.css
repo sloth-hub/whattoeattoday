@@ -35,7 +35,11 @@
     background-color: #faede9;
     box-shadow: 5px 5px 20px rgba(160, 60, 60, 0.5);
     border-radius: 20px;
-    min-height: 447px;
+    height: 467px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     text-align: center;
     overflow-x: hidden;
     padding: 100px 50px;
@@ -53,6 +57,8 @@
     padding: 10px;
     width: 120px;
     opacity: .6;
+    -webkit-transition: width 0.2s linear, padding 0.2s linear, font-size 0.2s linear;
+    transition: width 0.2s linear, padding 0.2s linear, font-size 0.2s linear;
 }
 
 .btn:hover {
@@ -150,9 +156,24 @@
     cursor: pointer;
     position: relative;
 }
+
+.mood_ask, .food_ask {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    word-break: keep-all;
+}
+
+.moods, .foods {
+    margin-bottom: 40px;
+}
+
 .moods {
+    margin-top: 20px;
     background-color: #faede9;
-    box-shadow: 5px 5px 8px rgba(160, 60, 60, 0.3), -6px -5px 8px rgba(255,255,255,0.8), inset 3px 3px 8px rgba(160, 60, 60, 0.05);
+    box-shadow: 5px 5px 8px rgba(160, 60, 60, 0.15), -6px -5px 8px rgba(255,255,255,0.6), inset 3px 3px 8px rgba(160, 60, 60, 0.03);
 	padding: 0.2rem 0.4rem;
 	border-radius: 2.2rem
 }
@@ -261,20 +282,11 @@
     opacity: 1;
 }
 
-.mood_ask, .food_ask {
-    font-size: 28px;
-    font-weight: 500;
-    margin-bottom: 30px;
-}
-
-.moods, .foods {
-    margin-bottom: 40px;
-}
-
 .result_container {
     padding: 50px;
+    justify-content: start;
     box-sizing: border-box;
-    height: 647px;
+    height: 667px;
 }
 
 .result_list {
@@ -357,7 +369,10 @@
         width: 60px;
     }
     .mood_ask, .food_ask {
-        font-size: 22px;
+        font-size: 24px;
+    }
+    .result_container {
+        height: auto;
     }
     .result_btn .btn {
         font-size: 18px;
@@ -381,8 +396,19 @@
         width: 150px;
         margin: 30px auto;
     }
+    .mood_ask, .food_ask {
+        margin-bottom: 20px;
+        font-size: 22px;
+    }
+    .moods, .foods {
+        margin-bottom: 30px;
+    }
+    .moods img {
+        height: 2rem;
+        width: 2rem;
+    }
     .result_container {
-        height: auto;
+        /* min-height: 447px; */
     }
     .result_wrap .result_title {
         font-size: 24px;
@@ -395,6 +421,8 @@
     }
     .result_btn .btn {
         display: block;
+    }
+    .mood_box .btn, .food_box .btn, .result_wrap .btn {
         font-size: 16px;
         width: 90px;
         padding: 8px;
