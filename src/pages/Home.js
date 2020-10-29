@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import "./Home.css";
 
 const API_KEY = "80e4e2378e235fae347d6f18a4538af9";
+// const API_KEY = process.env.REACT_APP_WEATHER_KEY;
 
 const Home = () => {
 

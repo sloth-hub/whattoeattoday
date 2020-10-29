@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { HashRouter, Route } from 'react-router-dom';
 import ReactDOM from "react-dom";
 import Home from "./pages/Home";
@@ -18,6 +19,9 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(
   <React.Fragment>
     <App />
+    <Helmet>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    </Helmet>
   </React.Fragment>,
   rootElement
 );
