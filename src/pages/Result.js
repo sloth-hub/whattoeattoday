@@ -66,10 +66,10 @@ const Result = ({ state }) => {
             document.querySelector("span.foodName").innerText = currentFood;
 
         },
-        Result = ({ img, name }) => {
+        Result = ({ length, img, name }) => {
             return (
                 <Fade>
-                    <img src={img} alt={name} className="list_item" />
+                    <img src={img} alt={name} className={length === 0 ? "list_item active" : "list_item"} />
                 </Fade>
             )
         }
@@ -82,7 +82,7 @@ const Result = ({ state }) => {
                     <div className="result_wrap">
                         <div className="result_list">
                             {result.map((f, index) => {
-                                return <Result key={index} name={f.name} img={f.img} />
+                                return <Result key={index} length={index} name={f.name} img={f.img} />
                             })}
                         </div>
                         <h1 className="result_title"><span className="foodName">{foodName}</span> 어떠세요?</h1>
