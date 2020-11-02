@@ -21,6 +21,7 @@ ReactDOM.render(
     <App />
     <Helmet>
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v8.0" nonce="k6exFkce"></script>
     </Helmet>
   </React.Fragment>,
   rootElement

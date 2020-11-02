@@ -89,7 +89,15 @@ const Result = ({ state }) => {
                         <div className="result_btn">
                             <button className="nextBtn btn" onClick={() => nextSlides(1)}>다른거!</button>
                             <Link to="/"><button className="homeBtn btn">홈으로</button></Link>
+                        </div>
+                        <div className="result_share">
                             <KakaoShareBtn />
+                            <button id="facebook-link-icon" className="sns_btn">
+                                <img src={process.env.PUBLIC_URL + "/images/facebook-icon.png"} alt="facebook-share-icon" />
+                            </button>
+                            <button id="twitter-link-icon" className="sns_btn">
+                                <img src={process.env.PUBLIC_URL + "/images/twitter-icon.png"} alt="facebook-share-icon" />
+                            </button>
                         </div>
                     </div>
                 }

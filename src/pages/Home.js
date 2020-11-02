@@ -6,9 +6,6 @@ import Weather from "../components/Weather";
 import Footer from "../components/Footer";
 import "./Home.css";
 
-const API_KEY = "80e4e2378e235fae347d6f18a4538af9";
-// const API_KEY = process.env.REACT_APP_WEATHER_KEY;
-
 const Home = () => {
 
     const [state, setState] = useState({
@@ -26,7 +23,7 @@ const Home = () => {
                 weather,
                 name
             }
-        } = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${API_KEY}&units=metric`);
+        } = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${process.env.REACT_APP_WEATHER_KEY}&units=metric`);
         setState({
             isLoading: false,
             condition: weather[0].main,
