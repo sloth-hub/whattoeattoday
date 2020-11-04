@@ -345,8 +345,8 @@ button:focus {
     border-radius: 6px;
     width: 34px;
     height: 34px;
-    -webkit-transition: all 0.2s linear;
-	transition: all 0.2s linear;
+    -webkit-transition: all 0.1s linear;
+	transition: all 0.1s linear;
 }
 
 .sns_btn img:hover {

@@ -3,15 +3,18 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Fade from "react-reveal/Fade";
 import KakaoShareBtn from "../components/KakaoShareBtn";
+import FacebookHelmet from "../components/FacebookHelmet";
 
 const Result = ({ state }) => {
 
     const [loading, setLoading] = useState({
         isLoading: true
     }), [result, setResult] = useState('')
-        , [foodName, setFoodName] = useState('');
+        , [foodName, setFoodName] = useState('')
+        ,[foodImgUrl, setFoodImgUrl] = useState('');
 
     let slideIndex = 1;
+    let currentFood;
 
     useEffect(() => {
         getFood();
@@ -43,28 +46,29 @@ const Result = ({ state }) => {
             setResult(resultList);
             setLoading({ isLoading: false });
             setFoodName(resultList[0].name);
+            setFoodImgUrl(resultList[0].img);
         },
         nextSlides = (n) => {
             showSlides(slideIndex += n);
         },
         showSlides = (n) => {
-            const list = document.querySelector("div.result_list");
-            const item = list.children;
+            const item = document.querySelectorAll(".list_item");
             if (n > item.length) {
                 slideIndex = 1;
-            } else if (n < 1) {
+            } 
+            if (n < 1) {
                 slideIndex = item.length;
             }
-            for (let i = 0; i < item.length; i++) {
-                item[i].style.display = "none";
-                item[i].classList.remove("active");
-            }
+            item.forEach((v) => {
+                v.style.display = "none";
+                v.classList.remove("active");
+            });
             item[slideIndex - 1].style.display = "initial";
             item[slideIndex - 1].classList.add("active");
 
-            let currentFood = list.querySelector(".active").getAttribute("alt");
-            document.querySelector("span.foodName").innerText = currentFood;
-
+            currentFood = document.querySelector("img.active");
+            document.querySelector("span.foodName").innerText = currentFood.alt;
+            document.querySelector("meta[property='og\\:image']").setAttribute("content", currentFood.src);
         },
         Result = ({ length, img, name }) => {
             return (
@@ -91,10 +95,11 @@ const Result = ({ state }) => {
                             <Link to="/"><button className="homeBtn btn">홈으로</button></Link>
                         </div>
                         <div className="result_share">
-                            <KakaoShareBtn />
-                            <button id="facebook-link-icon" className="sns_btn">
+                            <KakaoShareBtn img={foodImgUrl} />
+                            <button id="facebook-link-icon" className="sns_btn fab fa-facebook-f">
                                 <img src={process.env.PUBLIC_URL + "/images/facebook-icon.png"} alt="facebook-share-icon" />
                             </button>
+                            <FacebookHelmet img={foodImgUrl}/>
                             <button id="twitter-link-icon" className="sns_btn">
                                 <img src={process.env.PUBLIC_URL + "/images/twitter-icon.png"} alt="facebook-share-icon" />
                             </button>

@@ -3,27 +3,24 @@ import React, { useEffect } from "react";
 const KakaoShareBtn = () => {
 
     // const [imgUrl, setImgUrl] = useState('');
-    let imgUrl;
 
     useEffect(()=> {
         window.Kakao.init(process.env.REACT_APP_KAKAO_KEY);
         createKakaoButton();
     }, []);
 
-    const createKakaoButton = () => {
+    const createKakaoButton = ({img}) => {
 
         if (window.Kakao.isInitialized()) {
-
-            imgUrl = document.querySelector("img.active").src;
 
             window.Kakao.Link.createDefaultButton({
                 container: '#kakao-link-btn',
                 objectType: 'feed',
                 content: {
-                    title: '오늘 뭐 먹지?',
+                    title: 'WHAT TO EAT TODAY? 오늘 뭐 먹지?',
                     description: '"오늘 뭐 먹지?" 하고 고민하셨죠? 이 메뉴 어때요?',
                     imageUrl:
-                        imgUrl,
+                        img,
                     link: {
                         mobileWebUrl: 'https://sloth-hub.github.io/whattoeattoday/',
                         webUrl: 'https://sloth-hub.github.io/whattoeattoday/',
@@ -42,13 +39,10 @@ const KakaoShareBtn = () => {
             
         }
         
-    }, changeUrl = () => {
-        
-        
     }
 
     return (
-        <button id="kakao-link-btn" className="sns_btn">
+        <button id="kakao-link-btn" className="sns_btn" onClick={console.log("gg")}>
             <img src="//dev.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_small.png" alt="kakao-share-icon" />
         </button>
     );
