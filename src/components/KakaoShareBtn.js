@@ -2,47 +2,27 @@ import React, { useEffect } from "react";
 
 const KakaoShareBtn = () => {
 
-    // const [imgUrl, setImgUrl] = useState('');
-
-    useEffect(()=> {
+    useEffect(() => {
         window.Kakao.init(process.env.REACT_APP_KAKAO_KEY);
-        createKakaoButton();
+        // document.querySelector("#kakao-link-btn").addEventListener("click", createKakaoButton);
     }, []);
 
-    const createKakaoButton = ({img}) => {
+    const createKakaoButton = () => {
 
         if (window.Kakao.isInitialized()) {
 
-            window.Kakao.Link.createDefaultButton({
-                container: '#kakao-link-btn',
-                objectType: 'feed',
-                content: {
-                    title: 'WHAT TO EAT TODAY? 오늘 뭐 먹지?',
-                    description: '"오늘 뭐 먹지?" 하고 고민하셨죠? 이 메뉴 어때요?',
-                    imageUrl:
-                        img,
-                    link: {
-                        mobileWebUrl: 'https://sloth-hub.github.io/whattoeattoday/',
-                        webUrl: 'https://sloth-hub.github.io/whattoeattoday/',
-                    },
-                },
-                buttons: [
-                    {
-                        title: '다른 메뉴 보기',
-                        link: {
-                            mobileWebUrl: "https://sloth-hub.github.io/whattoeattoday/",
-                            webUrl: "https://sloth-hub.github.io/whattoeattoday/f",
-                        },
-                    }
-                ]
+            window.Kakao.Link.sendScrap({
+                requestUrl: "https://sloth-hub.github.io/whattoeattoday/ask"
             });
-            
+
         }
-        
+
+    }, changeImgUrl = () => {
+
     }
 
     return (
-        <button id="kakao-link-btn" className="sns_btn" onClick={console.log("gg")}>
+        <button id="kakao-link-btn" className="sns_btn" onClick={()=> createKakaoButton()}>
             <img src="//dev.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_small.png" alt="kakao-share-icon" />
         </button>
     );

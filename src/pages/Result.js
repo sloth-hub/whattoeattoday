@@ -14,7 +14,6 @@ const Result = ({ state }) => {
         ,[foodImgUrl, setFoodImgUrl] = useState('');
 
     let slideIndex = 1;
-    let currentFood;
 
     useEffect(() => {
         getFood();
@@ -66,11 +65,14 @@ const Result = ({ state }) => {
             item[slideIndex - 1].style.display = "initial";
             item[slideIndex - 1].classList.add("active");
 
-            currentFood = document.querySelector("img.active");
+            let currentFood = document.querySelector("img.active");
             document.querySelector("span.foodName").innerText = currentFood.alt;
             document.querySelector("meta[property='og\\:image']").setAttribute("content", currentFood.src);
         },
-        Result = ({ length, img, name }) => {
+        facebookShare = () => {
+            window.open(`https://www.facebook.com/sharer.php?u=${encodeURIComponent(window.location.href)}`);
+        },
+        Image = ({ length, img, name }) => {
             return (
                 <Fade>
                     <img src={img} alt={name} className={length === 0 ? "list_item active" : "list_item"} />
@@ -86,17 +88,17 @@ const Result = ({ state }) => {
                     <div className="result_wrap">
                         <div className="result_list">
                             {result.map((f, index) => {
-                                return <Result key={index} length={index} name={f.name} img={f.img} />
+                                return <Image key={index} length={index} name={f.name} img={f.img} />
                             })}
                         </div>
                         <h1 className="result_title"><span className="foodName">{foodName}</span> 어떠세요?</h1>
                         <div className="result_btn">
                             <button className="nextBtn btn" onClick={() => nextSlides(1)}>다른거!</button>
-                            <Link to="/"><button className="homeBtn btn">홈으로</button></Link>
+                            <button className="homeBtn btn" onClick={()=> {window.location.replace("https://sloth-hub.github.io/whattoeattoday/")}}>홈으로</button>
                         </div>
                         <div className="result_share">
-                            <KakaoShareBtn img={foodImgUrl} />
-                            <button id="facebook-link-icon" className="sns_btn fab fa-facebook-f">
+                            <KakaoShareBtn />
+                            <button id="facebook-link-icon" className="sns_btn fb-share-button" onClick={()=> facebookShare()}>
                                 <img src={process.env.PUBLIC_URL + "/images/facebook-icon.png"} alt="facebook-share-icon" />
                             </button>
                             <FacebookHelmet img={foodImgUrl}/>
