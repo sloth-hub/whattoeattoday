@@ -4,20 +4,20 @@ const KakaoShareBtn = () => {
 
     useEffect(() => {
         window.Kakao.init(process.env.REACT_APP_KAKAO_KEY);
-        // document.querySelector("#kakao-link-btn").addEventListener("click", createKakaoButton);
     }, []);
 
     const createKakaoButton = () => {
 
         if (window.Kakao.isInitialized()) {
 
-            window.Kakao.Link.sendScrap({
-                requestUrl: "https://sloth-hub.github.io/whattoeattoday/ask"
+            window.Kakao.Link.sendCustom({
+                templateId: 39266,
+                templateArgs: {
+                    currentFood: document.querySelector("meta[property='og\\:image']").getAttribute("content")
+                }
             });
 
         }
-
-    }, changeImgUrl = () => {
 
     }
 

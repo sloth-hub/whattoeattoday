@@ -38,8 +38,12 @@ const Result = ({ state }) => {
                 foodTemp = "hot";
             }
 
-            let resultList = foods.filter(v => {
+            let foodList = foods.filter(v => {
                 return v.weather.includes(state.condition) && v.mood.includes(state.mood) && v.taste === state.taste && v.temp.includes(foodTemp)
+            });
+
+            let resultList = foodList.sort(()=> {
+                return .5 - Math.random();
             });
 
             setResult(resultList);
