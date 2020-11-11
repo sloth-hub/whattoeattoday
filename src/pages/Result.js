@@ -76,6 +76,10 @@ const Result = ({ state }) => {
         facebookShare = () => {
             window.open(`https://www.facebook.com/sharer.php?u=${encodeURIComponent(window.location.href)}`);
         },
+        twitterShare = () => {
+            let dsc = document.querySelector("meta[property='og\\:description']").getAttribute("content");
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(dsc)}&url=${encodeURIComponent(window.location.href)}`);
+        },
         Image = ({ length, img, name }) => {
             return (
                 <Fade>
@@ -106,7 +110,7 @@ const Result = ({ state }) => {
                                 <img src={process.env.PUBLIC_URL + "/images/facebook-icon.png"} alt="facebook-share-icon" />
                             </button>
                             <FacebookHelmet img={foodImgUrl}/>
-                            <button id="twitter-link-icon" className="sns_btn">
+                            <button id="twitter-link-icon" className="sns_btn" onClick={()=> twitterShare()}>
                                 <img src={process.env.PUBLIC_URL + "/images/twitter-icon.png"} alt="facebook-share-icon" />
                             </button>
                         </div>
