@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "10ebe8b6caac418f6900cfce2307301e",
+    "revision": "d8ac11bdbbc8256ada1cf071ab3aa39c",
     "url": "/whattoeattoday/index.html"
   },
   {
-    "revision": "e9df0fbe137b4458f57d",
+    "revision": "2f92deb0de66e008c0a1",
     "url": "/whattoeattoday/static/css/main.34266347.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/whattoeattoday/static/js/2.e5cbd2e0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e9df0fbe137b4458f57d",
-    "url": "/whattoeattoday/static/js/main.3326cf31.chunk.js"
+    "revision": "2f92deb0de66e008c0a1",
+    "url": "/whattoeattoday/static/js/main.1e35403b.chunk.js"
   },
   {
     "revision": "ee74f9818660e1e3ba89",
