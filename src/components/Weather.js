@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 const weatherOptions = {
     Haze: {
@@ -43,19 +42,14 @@ const weatherOptions = {
         title: "Tornado"
     }
 }
-const Weather = ({ temp, condition }) => {
+const Weather = ({ weatherObj }) => {
 
     return (
         <div className="weatherbox">
-            <p className="weatherTemp">{Math.round(temp)}˚C</p>
-            <img src={weatherOptions[condition].iconName} className="weatherIcon" alt={condition} />
+            <p className="weatherTemp">{Math.round(weatherObj.temp)}˚C</p>
+            <img src={weatherOptions[weatherObj.condition].iconName} className="weatherIcon" alt={weatherObj.condition} />
         </div>
     );
 }
-
-Weather.propTypes = {
-    condition: PropTypes.string.isRequired,
-    city: PropTypes.string.isRequired,
-} 
 
 export default Weather;

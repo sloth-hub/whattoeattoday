@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 import Fade from "react-reveal/Fade";
 import KakaoShareBtn from "../components/KakaoShareBtn";
 import FacebookHelmet from "../components/FacebookHelmet";
 
-const Result = ({ state }) => {
+const Result = ({weatherObj}) => {
 
     const [loading, setLoading] = useState({
         isLoading: true
-    }), [result, setResult] = useState('')
-        , [foodName, setFoodName] = useState('')
-        ,[foodImgUrl, setFoodImgUrl] = useState('');
-
+    });
+    const [result, setResult] = useState('');
+    const [foodName, setFoodName] = useState('');
+    const [foodImgUrl, setFoodImgUrl] = useState('');
+    
+    const location = useLocation();
     let slideIndex = 1;
 
     useEffect(() => {
@@ -30,16 +32,16 @@ const Result = ({ state }) => {
         showFood = (foods) => {
 
             let foodTemp;
-            if (state.temp < 10) { // 10도 미만이면
+            if (weatherObj.temp < 10) { // 10도 미만이면
                 foodTemp = "cold";
-            } else if (state.temp >= 10 && state.temp < 24) { // 10도 이하거나 24도 미만이면
+            } else if (weatherObj.temp >= 10 && weatherObj.temp < 24) { // 10도 이하거나 24도 미만이면
                 foodTemp = "normal";
             } else { // 25도 이상이면
                 foodTemp = "hot";
             }
 
             let foodList = foods.filter(v => {
-                return v.weather.includes(state.condition) && v.mood.includes(state.mood) && v.taste === state.taste && v.temp.includes(foodTemp)
+                return v.weather.includes(weatherObj.condition) && v.mood.includes(location.state.mood) && v.taste === location.taste && v.temp.includes(foodTemp)
             });
 
             let resultList = foodList.sort(()=> {

@@ -1,3 +1,64 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;500;900&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	height: 100%;
+	line-height: 1;
+	color: #a03c3c;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-weight: 300;
+}
+ol, ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Scrollbar */
+
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -14,6 +75,7 @@
     box-shadow: inset -2px -2px 3px rgba(160, 60, 60, 0.3), inset -2px -2px 3px rgba(255,255,255,0.8), inset 1px 1px 2px rgba(160, 60, 60, 0.05);
     transition: .2 linear;
 }
+
 #root {
 	background-color: #FFAF74;  /* fallback for old browsers */
 	background-image: -webkit-linear-gradient(to bottom right, #FFAF74, #FF6F73);  /* Chrome 10-25, Safari 5.1-6 */

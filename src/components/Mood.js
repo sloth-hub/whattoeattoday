@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Food from "../components/Food";
 import Fade from "react-reveal/Fade";
 
-const Mood = ({ state }) => {
+const Mood = () => {
 
-    const [toggle, setToggle] = useState('');
-    const [mood, setMood] = useState('');
+    const [toggle, setToggle] = useState("");
+    const [mood, setMood] = useState("");
 
     const handleMoodChange = (evt) => {
         setMood(evt.target.value);
@@ -15,13 +15,12 @@ const Mood = ({ state }) => {
         if (mood === "") {
             alert("기분을 선택해주세요.");
         } else {
-            state.mood = mood;
-            setToggle({ isGetMood: true, isGetFood: false });
+            setToggle({ isGetMood: true, isGetFood: false }); 
         }
     }
 
     if (toggle.isGetMood) {
-        return <Food state={state} toggle={toggle} setToggle={setToggle} />;
+        return <Food toggle={toggle} setToggle={setToggle} mood={mood} />;
     }
     return (
         <div className="mood_container">

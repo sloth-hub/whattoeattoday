@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import Result from "../pages/Result";
+import { useHistory } from "react-router-dom";
 import Fade from "react-reveal/Fade";
 
-const Food = ({ state, toggle, setToggle }) => {
+const Food = ({ toggle, setToggle, mood }) => {
 
-    const [taste, setTaste] = useState('');
+    const [taste, setTaste] = useState("");
+    const history = useHistory();
 
     const handleFoodChange = (evt) => {
         setTaste(evt.target.value);
@@ -13,13 +14,18 @@ const Food = ({ state, toggle, setToggle }) => {
         if (taste === "") {
             alert("땡기는 맛을 선택해주세요.");
         } else {
-            state.taste = taste;
             setToggle({ isGetMood: true, isGetFood: true });
+            history.push({
+                pathname: "/result",
+                state: {
+                    mood,
+                    taste,
+                    toggle
+                }
+            })
         }
     }
-    if (toggle.isGetFood) {
-        return <Result state={state} />;
-    }
+
     return (
         <div className="food_container">
             <Fade>
