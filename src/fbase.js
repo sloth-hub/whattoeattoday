@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/database";
 
-const firebaseConfig = {
+export const firebaseConfig = {
     apiKey: process.env.REACT_APP_API_KEY,
     authDomain: process.env.REACT_APP_AUTH_DOMAIN,
     databaseURL: process.env.REACT_APP_DATABASE_URL,
@@ -13,7 +13,5 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-
-export const firebaseInstance = firebase;
 
 export const database = firebase.database();

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import axios from "axios";
+import { useHistory, useLocation } from "react-router-dom";
 import Fade from "react-reveal/Fade";
 import KakaoShareBtn from "../components/KakaoShareBtn";
 import FacebookHelmet from "../components/FacebookHelmet";
+import { database } from "../fbase";
 
-const Result = ({weatherObj}) => {
+const Result = ({ weatherObj }) => {
 
     const [loading, setLoading] = useState({
         isLoading: true
@@ -13,21 +13,25 @@ const Result = ({weatherObj}) => {
     const [result, setResult] = useState('');
     const [foodName, setFoodName] = useState('');
     const [foodImgUrl, setFoodImgUrl] = useState('');
-    
+
     const location = useLocation();
+    const history = useHistory();
+    
     let slideIndex = 1;
 
     useEffect(() => {
-        getFood();
+        if (!location.state) {
+            history.push("/");
+        } else {
+            getFood();
+        }
     }, []);
 
-    const getFood = async () => {
-        const {
-            data: {
-                foods
-            }
-        } = await axios.get("https://whattoeattoday-5c793.firebaseio.com/.json");
-        showFood(foods);
+    const getFood = () => {
+        database.ref("foods").once("value").then((snapshot) => {
+            const foods = snapshot.val();
+            showFood(foods);
+        });
     },
         showFood = (foods) => {
 
@@ -41,13 +45,13 @@ const Result = ({weatherObj}) => {
             }
 
             let foodList = foods.filter(v => {
-                return v.weather.includes(weatherObj.condition) && v.mood.includes(location.state.mood) && v.taste === location.taste && v.temp.includes(foodTemp)
+                return v.weather.includes(weatherObj.condition) && v.mood.includes(location.state.mood) && v.taste === location.state.taste && v.temp.includes(foodTemp);
             });
 
-            let resultList = foodList.sort(()=> {
+            let resultList = foodList.sort(() => {
                 return .5 - Math.random();
             });
-
+            
             setResult(resultList);
             setLoading({ isLoading: false });
             setFoodName(resultList[0].name);
@@ -60,7 +64,7 @@ const Result = ({weatherObj}) => {
             const item = document.querySelectorAll(".list_item");
             if (n > item.length) {
                 slideIndex = 1;
-            } 
+            }
             if (n < 1) {
                 slideIndex = item.length;
             }
@@ -104,15 +108,15 @@ const Result = ({weatherObj}) => {
                         <h1 className="result_title"><span className="foodName">{foodName}</span> 어떠세요?</h1>
                         <div className="result_btn">
                             <button className="nextBtn btn" onClick={() => nextSlides(1)}>다른거!</button>
-                            <button className="homeBtn btn" onClick={()=> {window.location.replace("https://sloth-hub.github.io/whattoeattoday/")}}>홈으로</button>
+                            <button className="homeBtn btn" onClick={() => { history.push("/"); }}>홈으로</button>
                         </div>
                         <div className="result_share">
                             <KakaoShareBtn />
-                            <button id="facebook-link-icon" className="sns_btn fb-share-button" onClick={()=> facebookShare()}>
+                            <button id="facebook-link-icon" className="sns_btn fb-share-button" onClick={() => facebookShare()}>
                                 <img src={process.env.PUBLIC_URL + "/images/facebook-icon.png"} alt="facebook-share-icon" />
                             </button>
-                            <FacebookHelmet img={foodImgUrl}/>
-                            <button id="twitter-link-icon" className="sns_btn" onClick={()=> twitterShare()}>
+                            <FacebookHelmet img={foodImgUrl} />
+                            <button id="twitter-link-icon" className="sns_btn" onClick={() => twitterShare()}>
                                 <img src={process.env.PUBLIC_URL + "/images/twitter-icon.png"} alt="facebook-share-icon" />
                             </button>
                         </div>
