@@ -4,7 +4,7 @@ import Fade from "react-reveal/Fade";
 
 const Mood = () => {
 
-    const [toggle, setToggle] = useState("");
+    const [isGetMood, setIsGetMood] = useState(false);
     const [mood, setMood] = useState("");
 
     const handleMoodChange = (evt) => {
@@ -15,12 +15,12 @@ const Mood = () => {
         if (mood === "") {
             alert("기분을 선택해주세요.");
         } else {
-            setToggle({ isGetMood: true, isGetFood: false }); 
+            setIsGetMood(true); 
         }
     }
 
-    if (toggle.isGetMood) {
-        return <Food toggle={toggle} setToggle={setToggle} mood={mood} />;
+    if (isGetMood) {
+        return <Food mood={mood} />;
     }
     return (
         <div className="mood_container">

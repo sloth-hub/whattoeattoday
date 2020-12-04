@@ -16,7 +16,7 @@ const Result = ({ weatherObj }) => {
 
     const location = useLocation();
     const history = useHistory();
-    
+
     let slideIndex = 1;
 
     useEffect(() => {
@@ -51,7 +51,7 @@ const Result = ({ weatherObj }) => {
             let resultList = foodList.sort(() => {
                 return .5 - Math.random();
             });
-            
+
             setResult(resultList);
             setLoading({ isLoading: false });
             setFoodName(resultList[0].name);
@@ -88,9 +88,7 @@ const Result = ({ weatherObj }) => {
         },
         Image = ({ length, img, name }) => {
             return (
-                <Fade>
-                    <img src={img} alt={name} className={length === 0 ? "list_item active" : "list_item"} />
-                </Fade>
+                <img src={img} alt={name} className={length === 0 ? "list_item active" : "list_item"} />
             )
         }
 

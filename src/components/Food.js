@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Fade from "react-reveal/Fade";
 
-const Food = ({ toggle, setToggle, mood }) => {
+const Food = ({ mood }) => {
 
     const [taste, setTaste] = useState("");
     const history = useHistory();
@@ -14,13 +14,11 @@ const Food = ({ toggle, setToggle, mood }) => {
         if (taste === "") {
             alert("땡기는 맛을 선택해주세요.");
         } else {
-            setToggle({ isGetMood: true, isGetFood: true });
             history.push({
                 pathname: "/result",
                 state: {
                     mood,
-                    taste,
-                    toggle
+                    taste
                 }
             })
         }

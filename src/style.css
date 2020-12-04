@@ -88,6 +88,8 @@ table {
     display: flex;
 }
 
+/* Container */
+
 .container {
 	margin: auto;
     width: 800px;
@@ -106,6 +108,8 @@ table {
     overflow-x: hidden;
     padding: 100px 50px;
 }
+
+/* Button */
 
 .btn {
 	border: none;
@@ -135,9 +139,12 @@ table {
     transition: color .2s linear, opacity .2s linear;
     opacity: 1;
 }
+
 button:focus {
     outline: none;
 }
+
+/* Home */
 
 .home_title h1, h2 {
     background: #FFAF74;  /* fallback for old browsers */
@@ -200,6 +207,8 @@ button:focus {
     font-size: 18px;
     font-weight: 500;
 }
+
+/* Mood */
 
 .mood_box, .food_box {
     display: flex;
@@ -290,6 +299,8 @@ button:focus {
 	filter: brightness(100%);
 }
 
+/* Food */
+
 .foods input[type='radio'] {
     opacity: 0;
     width: 1px;
@@ -343,6 +354,8 @@ button:focus {
     transform: translate3d(8px, 0, 0);
     opacity: 1;
 }
+
+/* Result */
 
 .result_container {
     padding: 50px;
