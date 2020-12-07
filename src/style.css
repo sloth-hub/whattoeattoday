@@ -95,7 +95,7 @@ table {
     width: 800px;
 }
 
-.home_container, .mood_container, .food_container, .result_container {
+.home_container, .ask_container, .result_container {
     background-color: #faede9;
     box-shadow: 5px 5px 20px rgba(160, 60, 60, 0.5);
     border-radius: 20px;
@@ -457,7 +457,7 @@ button:focus {
 
 @media (max-width: 768px) { 
 
-    .home_container, .mood_container, .food_container {
+    .home_container, .ask_container {
         padding: 60px 40px;
     }
     .home_title h1 {
@@ -489,7 +489,7 @@ button:focus {
 
 @media (max-width: 480px) {
 
-    .home_container, .mood_container, .food_container, .result_container {
+    .home_container, .ask_container, .result_container {
         /* min-height: auto; */
         padding: 40px 30px;
     }

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Fade from "react-reveal/Fade";
 import Weather from "../components/Weather";

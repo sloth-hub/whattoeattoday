@@ -10,9 +10,9 @@ const Result = ({ weatherObj }) => {
     const [loading, setLoading] = useState({
         isLoading: true
     });
-    const [result, setResult] = useState('');
-    const [foodName, setFoodName] = useState('');
-    const [foodImgUrl, setFoodImgUrl] = useState('');
+    const [result, setResult] = useState("");
+    const [foodName, setFoodName] = useState("");
+    const [foodImgUrl, setFoodImgUrl] = useState("");
 
     const location = useLocation();
     const history = useHistory();
@@ -25,11 +25,12 @@ const Result = ({ weatherObj }) => {
         } else {
             getFood();
         }
-    }, []);
+    }, [history, location.state]);
 
     const getFood = () => {
-        database.ref("foods").once("value").then((snapshot) => {
-            const foods = snapshot.val();
+
+        database.ref("foods").orderByChild("taste").equalTo(location.state.taste).once("value").then((data) => {
+            const foods = Object.values(data.val());
             showFood(foods);
         });
     },
@@ -45,7 +46,7 @@ const Result = ({ weatherObj }) => {
             }
 
             let foodList = foods.filter(v => {
-                return v.weather.includes(weatherObj.condition) && v.mood.includes(location.state.mood) && v.taste === location.state.taste && v.temp.includes(foodTemp);
+                return v.weather.includes(weatherObj.condition) && v.mood.includes(location.state.mood) && v.temp.includes(foodTemp);
             });
 
             let resultList = foodList.sort(() => {
@@ -57,21 +58,16 @@ const Result = ({ weatherObj }) => {
             setFoodName(resultList[0].name);
             setFoodImgUrl(resultList[0].img);
         },
-        nextSlides = (n) => {
-            showSlides(slideIndex += n);
-        },
-        showSlides = (n) => {
+        nextSlides = () => {
             const item = document.querySelectorAll(".list_item");
-            if (n > item.length) {
-                slideIndex = 1;
-            }
-            if (n < 1) {
-                slideIndex = item.length;
-            }
             item.forEach((v) => {
                 v.style.display = "none";
                 v.classList.remove("active");
             });
+            slideIndex++;
+            if (slideIndex > item.length) {
+                slideIndex = 1;
+            }
             item[slideIndex - 1].style.display = "initial";
             item[slideIndex - 1].classList.add("active");
 
@@ -85,11 +81,6 @@ const Result = ({ weatherObj }) => {
         twitterShare = () => {
             let dsc = document.querySelector("meta[property='og\\:description']").getAttribute("content");
             window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(dsc)}&url=${encodeURIComponent(window.location.href)}`);
-        },
-        Image = ({ length, img, name }) => {
-            return (
-                <img src={img} alt={name} className={length === 0 ? "list_item active" : "list_item"} />
-            )
         }
 
     return (
@@ -100,7 +91,11 @@ const Result = ({ weatherObj }) => {
                     <div className="result_wrap">
                         <div className="result_list">
                             {result.map((f, index) => {
-                                return <Image key={index} length={index} name={f.name} img={f.img} />
+                                return (
+                                    <Fade key={index}>
+                                        <img src={f.img} alt={f.name} className={index === 0 ? "list_item active" : "list_item"} />
+                                    </Fade>
+                                );
                             })}
                         </div>
                         <h1 className="result_title"><span className="foodName">{foodName}</span> 어떠세요?</h1>

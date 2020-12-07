@@ -25,7 +25,7 @@ const Food = ({ mood }) => {
     }
 
     return (
-        <div className="food_container">
+        <div className="ask_container">
             <Fade>
                 <div className="food_box">
                     <h1 className="food_ask">지금 어떤 맛이 땡기나요?</h1>

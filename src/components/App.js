@@ -30,7 +30,7 @@ const App = () => {
             GetWeather(parseCoords.latitude, parseCoords.longitude);
         }
 
-    }, []);
+    }, [loadedCoords]);
 
     const GetWeather = async (lat, lng) => {
         const {
