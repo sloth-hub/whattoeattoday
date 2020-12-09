@@ -74,6 +74,7 @@ const Result = ({ weatherObj }) => {
             let currentFood = document.querySelector("img.active");
             document.querySelector("span.foodName").innerText = currentFood.alt;
             document.querySelector("meta[property='og\\:image']").setAttribute("content", currentFood.src);
+            document.querySelector("meta[property='og\\:description']").setAttribute("content", `"오늘 뭐 먹지?" 하고 고민하셨죠? ${currentFood.alt} 어떠세요?`);
         },
         facebookShare = () => {
             window.open(`https://www.facebook.com/sharer.php?u=${encodeURIComponent(window.location.href)}`);
@@ -89,16 +90,21 @@ const Result = ({ weatherObj }) => {
                 {loading.isLoading ?
                     <img src="./images/loading.gif" alt="loading..." className="result_loading" /> :
                     <div className="result_wrap">
-                        <div className="result_list">
-                            {result.map((f, index) => {
-                                return (
-                                    <Fade key={index}>
-                                        <img src={f.img} alt={f.name} className={index === 0 ? "list_item active" : "list_item"} />
-                                    </Fade>
-                                );
-                            })}
+                        <div className="result_listwarp">
+                            <h1 className="result_title">
+                                <span className="foodName">{foodName}</span>
+                             어떠세요?
+                        </h1>
+                            <div className="result_list">
+                                {result.map((f, index) => {
+                                    return (
+                                        <Fade key={index}>
+                                            <img src={f.img} alt={f.name} className={index === 0 ? "list_item active" : "list_item"} />
+                                        </Fade>
+                                    );
+                                })}
+                            </div>
                         </div>
-                        <h1 className="result_title"><span className="foodName">{foodName}</span> 어떠세요?</h1>
                         <div className="result_btn">
                             <button className="nextBtn btn" onClick={() => nextSlides(1)}>다른거!</button>
                             <button className="homeBtn btn" onClick={() => { history.push("/"); }}>홈으로</button>
@@ -108,7 +114,7 @@ const Result = ({ weatherObj }) => {
                             <button id="facebook-link-icon" className="sns_btn fb-share-button" onClick={() => facebookShare()}>
                                 <img src={process.env.PUBLIC_URL + "/images/facebook-icon.png"} alt="facebook-share-icon" />
                             </button>
-                            <FacebookHelmet img={foodImgUrl} />
+                            <FacebookHelmet img={foodImgUrl} menu={foodName} />
                             <button id="twitter-link-icon" className="sns_btn" onClick={() => twitterShare()}>
                                 <img src={process.env.PUBLIC_URL + "/images/twitter-icon.png"} alt="facebook-share-icon" />
                             </button>
