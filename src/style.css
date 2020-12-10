@@ -362,6 +362,8 @@ button:focus {
     justify-content: start;
     box-sizing: border-box;
     height: 667px;
+    display: flex;
+    justify-content: center;
 }
 
 .result_listwarp {

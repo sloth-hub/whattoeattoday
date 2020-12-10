@@ -28,7 +28,6 @@ const Result = ({ weatherObj }) => {
     }, [history, location.state]);
 
     const getFood = () => {
-
         database.ref("foods").orderByChild("taste").equalTo(location.state.taste).once("value").then((data) => {
             const foods = Object.values(data.val());
             showFood(foods);
@@ -106,7 +105,7 @@ const Result = ({ weatherObj }) => {
                             </div>
                         </div>
                         <div className="result_btn">
-                            <button className="nextBtn btn" onClick={() => nextSlides(1)}>다른거!</button>
+                            <button className="nextBtn btn" onClick={() => nextSlides()}>다른거!</button>
                             <button className="homeBtn btn" onClick={() => { history.push("/"); }}>홈으로</button>
                         </div>
                         <div className="result_share">
