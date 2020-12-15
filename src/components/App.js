@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import Router from './Router';
+import Footer from './Footer';
 
 const App = () => {
 
@@ -57,6 +58,7 @@ const App = () => {
                 </div>
                 : <Router isLoading={isLoading} weatherObj={weatherObj} />
             }
+            <Footer />
         </div>
     );
 }
