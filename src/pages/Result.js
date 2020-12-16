@@ -90,10 +90,6 @@ const Result = ({ weatherObj }) => {
                     <img src="./images/loading.gif" alt="loading..." className="result_loading" /> :
                     <div className="result_wrap">
                         <div className="result_listwarp">
-                            <h1 className="result_title">
-                                <span className="foodName">{foodName}</span>
-                             어떠세요?
-                        </h1>
                             <div className="result_list">
                                 {result.map((f, index) => {
                                     return (
@@ -103,10 +99,13 @@ const Result = ({ weatherObj }) => {
                                     );
                                 })}
                             </div>
+                            <h1 className="result_title">
+                                <span className="foodName">{foodName}</span>어떠세요?
+                            </h1>
                         </div>
                         <div className="result_btn">
-                            <button className="nextBtn btn" onClick={() => nextSlides()}>다른거!</button>
-                            <button className="homeBtn btn" onClick={() => { history.push("/"); }}>홈으로</button>
+                            <button className="nextBtn btn" onClick={() => nextSlides()}>NOPE!</button>
+                            <button className="homeBtn btn" onClick={() => { history.push("/"); }}>HOME</button>
                         </div>
                         <div className="result_share">
                             <KakaoShareBtn />

@@ -78,8 +78,8 @@ table {
 
 #root {
 	background-color: #FFAF74;  /* fallback for old browsers */
-	background-image: -webkit-linear-gradient(-45deg, #FFAF74, #FF6F73);  /* Chrome 10-25, Safari 5.1-6 */
-	background-image: linear-gradient(-45deg, #FFAF74, #FF6F73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background-image: -webkit-linear-gradient(-45deg, #FFAF74, #FF6F73, #FFAF74);  /* Chrome 10-25, Safari 5.1-6 */
+	background-image: linear-gradient(-45deg, #FFAF74, #FF6F73, #FFAF74); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
     top: 0;
@@ -125,10 +125,9 @@ table {
 }
 
 .home_container {
-    padding-left: 80px;
-    align-items: flex-start;
     transition: all linear .2s;
 }
+
 .home_container::before,
 .ask_container::before,
 .result_container::before {
@@ -148,7 +147,7 @@ table {
     border-radius: 30px;
     background-color: transparent;
     background: linear-gradient(135deg, rgba(160, 60, 60, 0.15), rgba(255,255,255,0.25));
-    box-shadow: 5px 5px 8px rgba(160, 60, 60, 0.3), -6px -5px 8px rgba(255,255,255,0.6), inset 3px 3px 8px rgba(160, 60, 60, 0.05);
+    box-shadow: 5px 5px 8px rgba(160, 60, 60, 0.3), -6px -5px 8px rgba(255,255,255,0.55), inset 3px 3px 8px rgba(160, 60, 60, 0.05);
     color: rgba(160, 60, 60, 0.4);
 	font-family: 'Noto Sans KR', sans-serif;
 	font-weight: 500;
@@ -179,10 +178,14 @@ button:focus {
 
 /* Home */
 
+.home_title {
+    width: 476px;
+}
+
 .home_title h1, h2 {
     background-color: #FFAF74;  /* fallback for old browsers */
-	background-image: -webkit-linear-gradient(-45deg, #FFAF74, #FF6F73);  /* Chrome 10-25, Safari 5.1-6 */
-	background-image: linear-gradient(-45deg, #FFAF74, #FF6F73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background-image: -webkit-linear-gradient(-45deg, #FFAF74, #FF6F73, #FFAF74);  /* Chrome 10-25, Safari 5.1-6 */
+	background-image: linear-gradient(-45deg, #FFAF74, #FF6F73, #FFAF74); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
     -webkit-background-clip: text;
@@ -194,10 +197,9 @@ button:focus {
 }
 
 .home_title h1 {
-    font-size: 62px;
+    font-size: 80px;
     font-weight: 900;
-    line-height: 0.8em;
-    height: 101px;
+    line-height: 0.9em;
 }
 
 .home_title h2 {
@@ -213,7 +215,7 @@ button:focus {
     border-radius: 50px;
     width: 160px;
     height: 154px;
-    margin: 50px 0;
+    margin: 50px 0 30px;
     background: linear-gradient(135deg, rgba(160, 60, 60, 0.08), rgba(255,255,255,0.2));
     box-shadow: inset 3px 3px 10px rgba(160, 60, 60, 0.2), inset -3px -3px 10px rgba(255,255,255,0.3);
 }
@@ -241,10 +243,6 @@ button:focus {
 .home_weather .weatherTemp {
     font-size: 18px;
     font-weight: 500;
-}
-
-.home_start {
-    margin-left: 20px;
 }
 
 /* Mood */
@@ -406,27 +404,11 @@ button:focus {
     justify-content: center;
 }
 
-.result_listwarp {
+/* .result_listwarp {
     position: relative;
-    margin-bottom: 60px;
-    display: flex;
-    justify-content: center;
-}
-
-.result_wrap .result_title {
-    position: absolute;
-    font-size: 42px;
-    z-index: 2;
-    bottom: -20px;
-    transition: all linear .2s;
-}
-
-.result_title .foodName {
-    font-weight: 700;
-}
+} */
 
 /* .result_list::before {
-    background: linear-gradient(to bottom, rgba(250, 237, 233, 0) 80%,rgba(250, 237, 233, 1) 95%);
     border-radius: 50px;
     content: "";
     position: absolute;
@@ -438,7 +420,8 @@ button:focus {
 .result_list .list_item {
     width: 100%;
     max-width: 520px;
-    border-radius: 50px;
+    max-height: 337px;
+    border-radius: 50px 50px 0 0;
     display: none;
 }
 
@@ -446,12 +429,30 @@ button:focus {
     display: initial;
 }
 
+.result_listwarp {
+    margin-bottom: 35px;
+    border-radius: 50px;
+    box-shadow: 8px 8px 20px rgba(160, 60, 60, 0.25);
+}
+
+.result_wrap .result_title {
+    background: linear-gradient(-135deg, rgba(160, 60, 60, 0.14), rgba(255,255,255,0.24));
+    border-radius: 0 0 50px 50px;
+    padding: 15px 0 20px;
+    font-size: 42px;
+    transition: all linear .2s;
+}
+
+.result_title .foodName {
+    font-weight: 700;
+}
+
 .result_btn {
-   margin: 0 auto;
+    margin: 0 auto;
 }
 
 .result_btn .homeBtn {
-   margin-left: 20px;
+    margin-left: 20px;
 }
 
 .result_share {
@@ -469,7 +470,7 @@ button:focus {
 }
 
 .sns_btn img {
-    box-shadow: 3px 3px 6px rgba(160, 60, 60, 0.3), -3px -4px 6px rgba(255,255,255,0.8);
+    box-shadow: 2px 3px 7px rgba(160, 60, 60, 0.3), -2px -3px 7px rgba(255,255,255,0.7);
     border-radius: 6px;
     width: 34px;
     height: 34px;
@@ -478,7 +479,7 @@ button:focus {
 }
 
 .sns_btn img:hover {
-    box-shadow: 2px 2px 6px rgba(160, 60, 60, 0.3), -2px -3px 6px rgba(255,255,255,0.8);
+    box-shadow: 1px 1px 8px rgba(160, 60, 60, 0.3), -2px -2px 7px rgba(255,255,255,0.7);
 }
 
 .sns_btn img:active {
@@ -501,26 +502,24 @@ button:focus {
 @media (max-width: 1024px) { 
     .container {
         width: 80%;
+        max-width: 800px;
     }
 }
 
 @media (max-width: 768px) { 
 
     .home_container, .ask_container {
-        padding: 60px 40px;
+        padding: 60px;
+    }
+    .home_title {
+        width: 69%;
+        min-width: 264px;
     }
     .home_title h1 {
         font-size: 52px;
-        height: 85px;
     }
     .home_weather {
         margin: 40px 0;
-    }
-    .result_loading {
-        width: 150px;
-    }
-    .home_weather {
-        width: 160px;
     }
     .home_weather .weatherIcon {
         width: 60px;
@@ -528,12 +527,18 @@ button:focus {
     .mood_ask, .food_ask {
         font-size: 24px;
     }
+    .moods img {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
     .result_container {
         height: auto;
     }
+    .result_loading {
+        width: 150px;
+    }
     .result_wrap .result_title {
         font-size: 32px;
-        bottom: -15px;
     }
     .result_btn .btn {
         font-size: 18px;
@@ -547,16 +552,11 @@ button:focus {
         /* min-height: auto; */
         padding: 40px 30px;
     }
-    .home_container {
-        align-items: center;
-    }
     .home_title h1, h2 {
         text-align: center;
     }
     .home_title h1 {
         font-size: 38px;
-        line-height: 1em;
-        height: auto;
         margin-bottom: 5px;
     }
     .home_title h2 {
@@ -585,12 +585,16 @@ button:focus {
         min-height: 447px;
     } */
     .result_listwarp {
-        margin-bottom: 40px;
+        border-radius: 30px;
+        margin-bottom: 30px;
     }
     .result_wrap .result_title {
+        border-radius: 0 0 30px 30px;
+        padding: 10px 0 15px;
         font-size: 24px;
     }
     .result_list .list_item {
+        border-radius: 30px 30px 0 0;
         max-width: 280px;
     }
     .result_btn {

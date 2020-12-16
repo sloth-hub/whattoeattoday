@@ -11,7 +11,7 @@ const Home = ({ isLoading, weatherObj }) => {
             <Fade>
                 <div className="home_container">
                     <section className="home_title">
-                        <h1>WHAT TO<br/>EAT TODAY?</h1>
+                        <h1>WHAT TO EAT TODAY?</h1>
                         <h2>오늘 뭐 먹지?</h2>
                     </section>
                     <section className="home_weather">
