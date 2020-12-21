@@ -67,7 +67,7 @@ const Result = ({ weatherObj }) => {
             if (slideIndex > item.length) {
                 slideIndex = 1;
             }
-            item[slideIndex - 1].style.display = "initial";
+            item[slideIndex - 1].style.display = "block";
             item[slideIndex - 1].classList.add("active");
 
             let currentFood = document.querySelector("img.active");

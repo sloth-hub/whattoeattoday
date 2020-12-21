@@ -77,11 +77,6 @@ table {
 }
 
 #root {
-	background-color: #FFAF74;  /* fallback for old browsers */
-	background-image: -webkit-linear-gradient(-45deg, #FFAF74, #FF6F73, #FFAF74);  /* Chrome 10-25, Safari 5.1-6 */
-	background-image: linear-gradient(-45deg, #FFAF74, #FF6F73, #FFAF74); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
     top: 0;
     left: 0;
     bottom: 0;
@@ -89,7 +84,29 @@ table {
     position: fixed;
     display: flex;
 }
+
+#root, .home_title h1, .home_title h2 {
+    background-color: #FFAF74;  /* fallback for old browsers */
+	background-image: -webkit-linear-gradient(-45deg, #FFAF74, #FF6F73, #FFAF74);  /* Chrome 10-25, Safari 5.1-6 */
+	background-image: linear-gradient(-45deg, #FFAF74, #FF6F73, #FFAF74); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: 400% 400%;
+    -webkit-animation: gradient 10s ease infinite;
+    animation: gradient 10s ease infinite;
+}
+
 @keyframes gradient {
+    0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@-webkit-keyframes gradient {
     0% {
 		background-position: 0% 50%;
 	}
@@ -104,7 +121,10 @@ table {
 /* Container */
 
 .container {
-	margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
     width: 800px;
 }
 
@@ -120,7 +140,7 @@ table {
     flex-direction: column;
     position: relative;
     text-align: center;
-    overflow-x: hidden;
+    overflow: hidden;
     padding: 100px 50px;
 }
 
@@ -182,12 +202,7 @@ button:focus {
     width: 476px;
 }
 
-.home_title h1, h2 {
-    background-color: #FFAF74;  /* fallback for old browsers */
-	background-image: -webkit-linear-gradient(-45deg, #FFAF74, #FF6F73, #FFAF74);  /* Chrome 10-25, Safari 5.1-6 */
-	background-image: linear-gradient(-45deg, #FFAF74, #FF6F73, #FFAF74); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
+.home_title h1, .home_title h2 {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -226,7 +241,12 @@ button:focus {
 }
 
 .home_weather .weatherTemp {
-    color: rgb(160, 60, 60, 0.6);
+    background-color: #FFAF74;  /* fallback for old browsers */
+	background-image: -webkit-linear-gradient(-45deg, #FFAF74, #FF6F73);  /* Chrome 10-25, Safari 5.1-6 */
+	background-image: linear-gradient(-45deg, #FFAF74, #FF6F73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .home_weather .weatherIcon {
@@ -307,34 +327,22 @@ button:focus {
 	transition: all 0.2s linear;
 }
 
-.moods input[class="good"]:hover + img,
-.moods input[class="good"]:checked + img,
-.moods input[class="good"]:focus + img {
+.moods input[type="radio"]:hover + img,
+.moods input[type="radio"]:checked + img,
+.moods input[type="radio"]:focus + img {
 	filter: brightness(100%);
 }
 
-.moods input[class="happy"]:hover + img,
-.moods input[class="happy"]:checked + img,
-.moods input[class="happy"]:focus + img {
-	filter: brightness(100%);
-}
-
-.moods input[class="melancholy"]:hover + img,
-.moods input[class="melancholy"]:checked + img,
-.moods input[class="melancholy"]:focus + img {
-	filter: brightness(100%);
-}
-
-.moods input[class="sad"]:hover + img,
-.moods input[class="sad"]:checked + img,
-.moods input[class="sad"]:focus + img {
-	filter: brightness(100%);
-}
-
-.moods input[class="angry"]:hover + img,
-.moods input[class="angry"]:checked + img,
-.moods input[class="angry"]:focus + img {
-	filter: brightness(100%);
+/* IE10+ */
+@media screen and (-ms-high-contarst: active), (-ms-high-contrast: none) {
+    .moods input[type="radio"]:hover + img,
+    .moods input[type="radio"]:checked + img,
+    .moods input[type="radio"]:focus + img {
+        background-color: rgba(255,255,255,0.6);
+        border: 3px solid rgba(255,255,255,0.6);
+        border-radius: 100%;
+        box-sizing: border-box;
+    }
 }
 
 /* Food */
@@ -426,7 +434,7 @@ button:focus {
 }
 
 .result_list .list_item:nth-child(1) {
-    display: initial;
+    display: block;
 }
 
 .result_listwarp {
