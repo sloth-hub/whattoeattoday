@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Fade from "react-reveal/Fade";
 import Weather from "../components/Weather";
-import Footer from "../components/Footer";
 
 const Home = ({ isLoading, weatherObj }) => {
     
