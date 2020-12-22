@@ -129,9 +129,12 @@ table {
         border-radius: 100%;
         box-sizing: border-box;
     }
-    .home_title h1, .home_title h2, .weatherTemp {
-        color: #ff8872;
-        background: none;
+    .home_title h1, .home_title h2, .home_weather .weatherTemp {
+        color: #ff8872 !important;
+        background: none !important;
+    }
+    .react-reveal {
+        opacity: 1;
     }
 }
 
@@ -217,7 +220,7 @@ button:focus {
 /* Home */
 
 .home_title {
-    width: 476px;
+    width: 490px;
 }
 
 .home_title h1, .home_title h2 {
@@ -553,7 +556,7 @@ button:focus {
         /* min-height: auto; */
         padding: 40px 30px;
     }
-    .home_title h1, h2 {
+    .home_title h1, .home_title h2 {
         text-align: center;
     }
     .home_title h1 {
