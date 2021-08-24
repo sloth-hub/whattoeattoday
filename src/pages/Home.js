@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import Fade from "react-reveal/Fade";
 import Weather from "../components/Weather";
 
-const Home = ({ isLoading, weatherObj }) => {
-    
+const Home = ({ isLoading, weatherObj, isLogedIn }) => {
+
     return (
         <>
             <Fade>
@@ -23,9 +23,12 @@ const Home = ({ isLoading, weatherObj }) => {
                         }
                     </section>
                     <section className="home_start">
-                        <Link to="/ask">
-                            <button className="btn">START</button>
-                        </Link>
+                        {isLogedIn ?
+                            <p className="home_loading">loading..</p> :
+                            <Link to="/ask">
+                                <button className="btn">START</button>
+                            </Link>
+                        }
                     </section>
                 </div>
             </Fade>

@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import Router from './Router';
 import Footer from './Footer';
+import firebase from 'firebase';
 
 const App = () => {
 
     const [weatherObj, setWeatherObj] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
+    const [isLogedIn, setIsLogedIn] = useState(true);
     const loadedCoords = localStorage.getItem("cords");
 
     useEffect(() => {
@@ -29,6 +31,7 @@ const App = () => {
         } else {
             const parseCoords = JSON.parse(loadedCoords);
             GetWeather(parseCoords.latitude, parseCoords.longitude);
+            LogIn();
         }
 
     }, [loadedCoords]);
@@ -49,6 +52,22 @@ const App = () => {
         setIsLoading(false);
     }
 
+    const LogIn = () => {
+
+        firebase.auth().signInAnonymously().then(() => {
+            firebase.auth().onAuthStateChanged((user) => {
+                if (user) {
+                    setIsLogedIn(false);
+                } else {
+                    console.log("Login Failed");
+                }
+            });
+        }).catch((error) => {
+            console.log(error.message);
+        });
+
+    }
+
     return (
         <div className="container">
             {loadedCoords === null ?
@@ -56,7 +75,7 @@ const App = () => {
                 <div className="loader">
                     <h2>위치확인 허용을 눌러주세요.</h2>
                 </div>
-                : <Router isLoading={isLoading} weatherObj={weatherObj} />
+                : <Router isLoading={isLoading} weatherObj={weatherObj} isLogedIn={isLogedIn} />
             }
             <Footer />
         </div>
