@@ -4,6 +4,9 @@ What to eat today?는 오늘의 기분과 날씨를 조합해 메뉴를 추천�
 
 ### [SITE LINK](https://sloth-hub.github.io/whattoeattoday/)
 
+## PREVIEW
+![wtet_preview](https://user-images.githubusercontent.com/53851248/134898054-120477ec-fcaa-434f-aebf-47330324860e.gif)
+
 ## TECHNOLOGIES
 
 + HTML
