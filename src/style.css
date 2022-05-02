@@ -319,7 +319,7 @@ button:focus {
     margin-bottom: 40px;
 }
 
-.moods {
+.moods, .foods {
     margin-top: 20px;
     background-color: transparent;
     background: linear-gradient(135deg, rgba(160, 60, 60, 0.08), rgba(255,255,255,0.25));
@@ -327,87 +327,71 @@ button:focus {
 	padding: 0.2rem 0.4rem;
 	border-radius: 2.2rem
 }
-.moods input[type="radio"] {
+.moods input[type="radio"],
+.foods input[type="radio"] {
 	position: absolute;
 	opacity: 0;
 }
 
-.moods img {
+.moods img, .foods img {
     filter: brightness(300%);
 	height: 3rem;
 	width: 3rem;
 	margin: 0.3rem;
 }
 
-.moods input + img {
+.moods input + img,
+.foods input + img {
 	cursor: pointer;
 }
 
-.moods input[type="radio"] + img {
+.moods input[type="radio"] + img,
+.foods input[type="radio"] + img {
 	-webkit-transition: all 0.2s linear;
 	transition: all 0.2s linear;
 }
 
 .moods input[type="radio"]:hover + img,
 .moods input[type="radio"]:checked + img,
-.moods input[type="radio"]:focus + img {
+.moods input[type="radio"]:focus + img,
+.foods input[type="radio"]:hover + img,
+.foods input[type="radio"]:checked + img,
+.foods input[type="radio"]:focus + img {
 	filter: brightness(100%);
 }
 
 /* Food */
 
-.foods input[type='radio'] {
-    opacity: 0;
-    width: 1px;
-    height: 1px;
-    position: absolute;
-    overflow: hidden;
+.foods {
+    display: flex;
+    padding: 0.3rem 1.3rem 0.6rem;
+    border-radius: 2.5rem;
+}
+.foods label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
-.foods label::before {
-    box-shadow: inset 2px 2px 3px rgba(160, 60, 60, 0.3), inset -2px 2px 3px rgba(255,255,255,0.6);
-    border-radius: 50%;
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    display: inline-block;
-    content: '';
+.foods label + label {
+    margin-left: 10px;
 }
 
-.foods label::after {
-    content: '';
-    width: 1px;
-    height: 1px;
-    opacity: 0;
+.foods .food_text {
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.2s linear;
 }
-
-.foods input[type='radio']:checked + label:after {
-    border-radius: 50%;
-    width: 11px;
-    height: 11px;
-    background: #FFAF74;
-    background: -webkit-linear-gradient(to bottom right, #FFAF74, #FF6F73);
-    background: linear-gradient(to bottom right, #FFAF74, #FF6F73);
-    position: absolute;
-    display: block;
-    top: 5px;
-    left: 5px;
-    opacity: 1;
-    transform: scale(1);
-    transition: opacity .2s linear;
-}
-
-.foods .text {
-    cursor: pointer;
-    padding-left: 30px;
-    opacity: .6;
-    transition: opacity .2s linear, transform .2s ease-out;
-}
-
-.foods input[type='radio']:focus ~ label .text {
-    transform: translate3d(8px, 0, 0);
-    opacity: 1;
+.foods input[type="radio"]:hover ~ .food_text,
+.foods input[type="radio"]:checked ~ .food_text,
+.foods input[type="radio"]:focus ~ .food_text {
+    background-color: #FFAF74;  /* fallback for old browsers */
+	background-image: -webkit-linear-gradient(135deg, #FFAF74, #FF6F73);  
+	background-image: linear-gradient(135deg, #FFAF74, #FF6F73);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 /* Result */
@@ -425,7 +409,6 @@ button:focus {
     width: 100%;
     max-width: 520px;
     max-height: 337px;
-    border-radius: 50px 50px 0 0;
     display: none;
 }
 
@@ -433,18 +416,15 @@ button:focus {
     display: block;
 }
 
-.result_listwarp {
-    margin-bottom: 35px;
-    border-radius: 50px;
-    box-shadow: 8px 8px 20px rgba(160, 60, 60, 0.25);
-}
-
 .result_wrap .result_title {
-    background: linear-gradient(-135deg, rgba(160, 60, 60, 0.14), rgba(255,255,255,0.24));
-    border-radius: 0 0 50px 50px;
-    padding: 15px 0 20px;
+    padding: 30px 0 35px;
     font-size: 42px;
     transition: all linear .2s;
+}
+
+.result_list {
+    border: 1px solid rgba(160, 60, 60, 0.2);
+    box-shadow: 4px 4px 20px rgba(160, 60, 60, 0.2);
 }
 
 .result_title .foodName {
@@ -535,6 +515,13 @@ button:focus {
         height: 2.5rem;
         width: 2.5rem;
     }
+    .foods img {
+        height: 2.8rem;
+        width: 2.8rem;
+    }
+    .foods .food_text {
+        font-size: 0.9rem;
+    }
     .result_container {
         height: auto;
     }
@@ -581,24 +568,26 @@ button:focus {
     .moods, .foods {
         margin-bottom: 30px;
     }
-    .moods img {
+    .moods img, .foods img {
         height: 2rem;
         width: 2rem;
     }
+    .foods img {
+        height: 2.3rem;
+        width: 2.3rem;
+    }
+    
     /* .result_container {
         min-height: 447px;
     } */
     .result_listwarp {
         border-radius: 30px;
-        margin-bottom: 30px;
     }
     .result_wrap .result_title {
-        border-radius: 0 0 30px 30px;
-        padding: 10px 0 15px;
+        padding: 20px 0 25px;
         font-size: 24px;
     }
     .result_list .list_item {
-        border-radius: 30px 30px 0 0;
         max-width: 280px;
     }
     .result_btn {
