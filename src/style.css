@@ -14,47 +14,54 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
+    display: block;
 }
+
 body {
-	height: 100%;
-	line-height: 1;
-	color: #a03c3c;
-	font-family: 'Noto Sans KR', sans-serif;
-	font-weight: 300;
+    height: 100%;
+    line-height: 1;
+    color: #a03c3c;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
 }
+
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
+
 a {
-	text-decoration: none;
-	color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
+
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* Scrollbar */
@@ -62,17 +69,20 @@ table {
 ::-webkit-scrollbar {
     width: 10px;
 }
-::-webkit-scrollbar-thumb{
+
+::-webkit-scrollbar-thumb {
     border-radius: 10px;
     transition: .2 linear;
-  }
-::-webkit-scrollbar-thumb:hover{
+}
+
+::-webkit-scrollbar-thumb:hover {
     background: #faede9;
-    box-shadow: inset -2px -2px 3px rgba(160, 60, 60, 0.2), inset -2px -2px 3px rgba(255,255,255,0.8), inset 1px 1px 2px rgba(160, 60, 60, 0.05);
+    box-shadow: inset -2px -2px 3px rgba(160, 60, 60, 0.2), inset -2px -2px 3px rgba(255, 255, 255, 0.8), inset 1px 1px 2px rgba(160, 60, 60, 0.05);
     transition: .2 linear;
 }
+
 ::-webkit-scrollbar-thumb:active {
-    box-shadow: inset -2px -2px 3px rgba(160, 60, 60, 0.3), inset -2px -2px 3px rgba(255,255,255,0.8), inset 1px 1px 2px rgba(160, 60, 60, 0.05);
+    box-shadow: inset -2px -2px 3px rgba(160, 60, 60, 0.3), inset -2px -2px 3px rgba(255, 255, 255, 0.8), inset 1px 1px 2px rgba(160, 60, 60, 0.05);
     transition: .2 linear;
 }
 
@@ -86,9 +96,12 @@ table {
 }
 
 #root, .home_title h1, .home_title h2 {
-    background-color: #FFAF74;  /* fallback for old browsers */
-	background-image: -webkit-linear-gradient(-45deg, #FFAF74, #FF6F73, #FFAF74);  /* Chrome 10-25, Safari 5.1-6 */
-	background-image: linear-gradient(-45deg, #FFAF74, #FF6F73, #FFAF74); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: #FFAF74;
+    /* fallback for old browsers */
+    background-image: -webkit-linear-gradient(-45deg, #FFAF74, #FF6F73, #FFAF74);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background-image: linear-gradient(-45deg, #FFAF74, #FF6F73, #FFAF74);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-size: 400% 400%;
     -webkit-animation: gradient 10s ease infinite;
     animation: gradient 10s ease infinite;
@@ -96,43 +109,50 @@ table {
 
 @keyframes gradient {
     0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 @-webkit-keyframes gradient {
     0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* IE10+ */
 
 @media screen and (-ms-high-contarst: active), (-ms-high-contrast: none) {
-    .moods input[type="radio"]:hover + img,
-    .moods input[type="radio"]:checked + img,
-    .moods input[type="radio"]:focus + img {
-        background-color: rgba(255,255,255,0.6);
-        border: 3px solid rgba(255,255,255,0.6);
+
+    .moods input[type="radio"]:hover+img,
+    .moods input[type="radio"]:checked+img,
+    .moods input[type="radio"]:focus+img {
+        background-color: rgba(255, 255, 255, 0.6);
+        border: 3px solid rgba(255, 255, 255, 0.6);
         border-radius: 100%;
         box-sizing: border-box;
     }
+
     .home_title h1, .home_title h2, .home_weather .weatherTemp {
         color: #ff8872 !important;
         background: none !important;
     }
+
     .react-reveal {
         opacity: 1;
     }
@@ -171,7 +191,7 @@ table {
 .home_container::before,
 .ask_container::before,
 .result_container::before {
-    background: linear-gradient(135deg, rgba(160, 60, 60, 0.2), rgba(255,255,255,0.25));
+    background: linear-gradient(135deg, rgba(160, 60, 60, 0.2), rgba(255, 255, 255, 0.25));
     content: "";
     position: absolute;
     top: 0;
@@ -184,15 +204,15 @@ table {
 /* Button */
 
 .btn {
-	border: none;
+    border: none;
     border-radius: 30px;
     background-color: transparent;
-    background: linear-gradient(135deg, rgba(160, 60, 60, 0.15), rgba(255,255,255,0.25));
-    box-shadow: 5px 5px 8px rgba(160, 60, 60, 0.3), -6px -5px 8px rgba(255,255,255,0.55), inset 3px 3px 8px rgba(160, 60, 60, 0.05);
+    background: linear-gradient(135deg, rgba(160, 60, 60, 0.15), rgba(255, 255, 255, 0.25));
+    box-shadow: 5px 5px 8px rgba(160, 60, 60, 0.3), -6px -5px 8px rgba(255, 255, 255, 0.55), inset 3px 3px 8px rgba(160, 60, 60, 0.05);
     color: rgba(160, 60, 60, 0.4);
-	font-family: 'Noto Sans KR', sans-serif;
-	font-weight: 500;
-	font-size: 21px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    font-size: 21px;
     padding: 10px;
     width: 120px;
     opacity: .6;
@@ -202,12 +222,12 @@ table {
 
 .btn:hover {
     color: rgba(160, 60, 60, 0.7);
-    box-shadow: 3px 3px 8px rgba(160, 60, 60, 0.3), -4px -3px 8px rgba(255,255,255,0.6), inset 3px 3px 8px rgba(160, 60, 60, 0.05);
+    box-shadow: 3px 3px 8px rgba(160, 60, 60, 0.3), -4px -3px 8px rgba(255, 255, 255, 0.6), inset 3px 3px 8px rgba(160, 60, 60, 0.05);
     transition: .2s linear;
 }
 
 .btn:active {
-    box-shadow: inset 3px 3px 8px rgba(160, 60, 60, 0.15), inset -3px -2px 8px rgba(255,255,255,0.3);
+    box-shadow: inset 3px 3px 8px rgba(160, 60, 60, 0.15), inset -3px -2px 8px rgba(255, 255, 255, 0.3);
     color: rgba(160, 60, 60, 0.6);
     transition: color .2s linear, opacity .2s linear;
     opacity: 1;
@@ -244,7 +264,7 @@ button:focus {
 }
 
 .home_title .home_logo {
-    width: 500px;    
+    width: 500px;
 }
 
 .home_weather {
@@ -252,8 +272,8 @@ button:focus {
     width: 160px;
     height: 154px;
     margin: 50px 0 30px;
-    background: linear-gradient(135deg, rgba(160, 60, 60, 0.08), rgba(255,255,255,0.2));
-    box-shadow: inset 3px 3px 10px rgba(160, 60, 60, 0.2), inset -3px -3px 10px rgba(255,255,255,0.3);
+    background: linear-gradient(135deg, rgba(160, 60, 60, 0.08), rgba(255, 255, 255, 0.2));
+    box-shadow: inset 3px 3px 10px rgba(160, 60, 60, 0.2), inset -3px -3px 10px rgba(255, 255, 255, 0.3);
 }
 
 .home_weather .weatherbox {
@@ -262,9 +282,12 @@ button:focus {
 }
 
 .home_weather .weatherTemp {
-    background-color: #FFAF74;  /* fallback for old browsers */
-	background-image: -webkit-linear-gradient(-45deg, #FFAF74, #FF6F73);  /* Chrome 10-25, Safari 5.1-6 */
-	background-image: linear-gradient(-45deg, #FFAF74, #FF6F73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: #FFAF74;
+    /* fallback for old browsers */
+    background-image: -webkit-linear-gradient(-45deg, #FFAF74, #FF6F73);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background-image: linear-gradient(-45deg, #FFAF74, #FF6F73);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -322,42 +345,43 @@ button:focus {
 .moods, .foods {
     margin-top: 20px;
     background-color: transparent;
-    background: linear-gradient(135deg, rgba(160, 60, 60, 0.08), rgba(255,255,255,0.25));
-    box-shadow: 6px 5px 10px rgba(160, 60, 60, 0.15), -6px -5px 8px rgba(255,255,255,0.35), inset 3px 3px 8px rgba(160, 60, 60, 0.03);
-	padding: 0.2rem 0.4rem;
-	border-radius: 2.2rem
+    background: linear-gradient(135deg, rgba(160, 60, 60, 0.08), rgba(255, 255, 255, 0.25));
+    box-shadow: 6px 5px 10px rgba(160, 60, 60, 0.15), -6px -5px 8px rgba(255, 255, 255, 0.35), inset 3px 3px 8px rgba(160, 60, 60, 0.03);
+    padding: 0.2rem 0.4rem;
+    border-radius: 2.2rem
 }
+
 .moods input[type="radio"],
 .foods input[type="radio"] {
-	position: absolute;
-	opacity: 0;
+    position: absolute;
+    opacity: 0;
 }
 
 .moods img, .foods img {
     filter: brightness(300%);
-	height: 3rem;
-	width: 3rem;
-	margin: 0.3rem;
+    height: 3rem;
+    width: 3rem;
+    margin: 0.3rem;
 }
 
-.moods input + img,
-.foods input + img {
-	cursor: pointer;
+.moods input+img,
+.foods input+img {
+    cursor: pointer;
 }
 
-.moods input[type="radio"] + img,
-.foods input[type="radio"] + img {
-	-webkit-transition: all 0.2s linear;
-	transition: all 0.2s linear;
+.moods input[type="radio"]+img,
+.foods input[type="radio"]+img {
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
 }
 
-.moods input[type="radio"]:hover + img,
-.moods input[type="radio"]:checked + img,
-.moods input[type="radio"]:focus + img,
-.foods input[type="radio"]:hover + img,
-.foods input[type="radio"]:checked + img,
-.foods input[type="radio"]:focus + img {
-	filter: brightness(100%);
+.moods input[type="radio"]:hover+img,
+.moods input[type="radio"]:checked+img,
+.moods input[type="radio"]:focus+img,
+.foods input[type="radio"]:hover+img,
+.foods input[type="radio"]:checked+img,
+.foods input[type="radio"]:focus+img {
+    filter: brightness(100%);
 }
 
 /* Food */
@@ -367,6 +391,7 @@ button:focus {
     padding: 0.3rem 1.3rem 0.6rem;
     border-radius: 2.5rem;
 }
+
 .foods label {
     display: flex;
     flex-direction: column;
@@ -374,7 +399,7 @@ button:focus {
 
 }
 
-.foods label + label {
+.foods label+label {
     margin-left: 10px;
 }
 
@@ -383,12 +408,14 @@ button:focus {
     font-weight: 500;
     transition: color 0.2s linear;
 }
-.foods input[type="radio"]:hover ~ .food_text,
-.foods input[type="radio"]:checked ~ .food_text,
-.foods input[type="radio"]:focus ~ .food_text {
-    background-color: #FFAF74;  /* fallback for old browsers */
-	background-image: -webkit-linear-gradient(135deg, #FFAF74, #FF6F73);  
-	background-image: linear-gradient(135deg, #FFAF74, #FF6F73);
+
+.foods input[type="radio"]:hover~.food_text,
+.foods input[type="radio"]:checked~.food_text,
+.foods input[type="radio"]:focus~.food_text {
+    background-color: #FFAF74;
+    /* fallback for old browsers */
+    background-image: -webkit-linear-gradient(135deg, #FFAF74, #FF6F73);
+    background-image: linear-gradient(135deg, #FFAF74, #FF6F73);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -432,7 +459,8 @@ button:focus {
 }
 
 .result_btn {
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
 
 .result_btn .homeBtn {
@@ -449,21 +477,21 @@ button:focus {
     background: none;
 }
 
-.sns_btn + .sns_btn {
+.sns_btn+.sns_btn {
     margin-left: 20px;
 }
 
 .sns_btn img {
-    box-shadow: 2px 3px 7px rgba(160, 60, 60, 0.3), -2px -3px 7px rgba(255,255,255,0.7);
+    box-shadow: 2px 3px 7px rgba(160, 60, 60, 0.3), -2px -3px 7px rgba(255, 255, 255, 0.7);
     border-radius: 6px;
     width: 34px;
     height: 34px;
     -webkit-transition: all 0.1s linear;
-	transition: all 0.1s linear;
+    transition: all 0.1s linear;
 }
 
 .sns_btn img:hover {
-    box-shadow: 1px 1px 8px rgba(160, 60, 60, 0.3), -2px -2px 7px rgba(255,255,255,0.7);
+    box-shadow: 1px 1px 8px rgba(160, 60, 60, 0.3), -2px -2px 7px rgba(255, 255, 255, 0.7);
 }
 
 .sns_btn img:active {
@@ -483,54 +511,66 @@ button:focus {
     padding: 30px 0 0;
 }
 
-@media (max-width: 1024px) { 
+@media (max-width: 1024px) {
     .container {
         width: 80%;
         max-width: 800px;
     }
 }
 
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
 
     .home_container, .ask_container {
         padding: 60px;
     }
+
     .home_title {
         width: 69%;
         min-width: 264px;
     }
+
     .home_title h1 {
         font-size: 52px;
     }
+
     .home_weather {
         margin: 40px 0;
     }
+
     .home_weather .weatherIcon {
         width: 60px;
     }
+
     .mood_ask, .food_ask {
         font-size: 24px;
     }
+
     .moods img {
         height: 2.5rem;
         width: 2.5rem;
     }
+
     .foods img {
         height: 2.8rem;
         width: 2.8rem;
     }
+
     .foods .food_text {
         font-size: 0.9rem;
     }
+
     .result_container {
         height: auto;
     }
+
     .result_loading {
         width: 150px;
     }
+
     .result_wrap .result_title {
         font-size: 32px;
     }
+
     .result_btn .btn {
         font-size: 18px;
         width: 100px;
@@ -543,68 +583,80 @@ button:focus {
         /* min-height: auto; */
         padding: 40px 30px;
     }
+
     .home_title h1, .home_title h2 {
         text-align: center;
     }
+
     .home_title h1 {
         font-size: 38px;
         margin-bottom: 5px;
     }
+
     .home_title h2 {
         font-weight: 900;
         font-size: 24px;
     }
+
     .home_weather {
         width: 150px;
         margin: 30px auto;
     }
+
     .home_start {
         margin: 0;
     }
+
     .mood_ask, .food_ask {
         margin-bottom: 20px;
         font-size: 22px;
     }
+
     .moods, .foods {
         margin-bottom: 30px;
     }
-    .moods img, .foods img {
-        height: 2rem;
-        width: 2rem;
+
+    .moods img {
+        height: 2.1rem;
+        width: 2.1rem;
     }
+
     .foods img {
         height: 2.3rem;
         width: 2.3rem;
     }
-    
+
+    .foods label+label {
+        margin-left: 6px;
+    }
+
+    .foods .food_text {
+        font-size: 0.8rem;
+    }
+
     /* .result_container {
         min-height: 447px;
     } */
     .result_listwarp {
         border-radius: 30px;
     }
+
     .result_wrap .result_title {
         padding: 20px 0 25px;
         font-size: 24px;
     }
+
     .result_list .list_item {
         max-width: 280px;
     }
-    .result_btn {
-        display: inline-block;
-    }
-    .result_btn .btn {
-        display: block;
-    }
+
     .mood_box .btn, .food_box .btn, .result_wrap .btn {
         font-size: 16px;
         width: 90px;
         padding: 8px;
     }
-    .result_btn .homeBtn {
-        margin: 15px 0 0;
-     }
-     .sns_btn img {
+
+    .sns_btn img {
         width: 28px;
         height: 28px;
     }
