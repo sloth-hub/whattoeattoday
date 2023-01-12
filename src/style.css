@@ -38,6 +38,7 @@ body {
     color: #a03c3c;
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 300;
+    box-sizing: border-box;
 }
 
 ol, ul {
@@ -165,7 +166,7 @@ table {
     justify-content: center;
     flex-direction: column;
     margin: auto;
-    width: 800px;
+    width: 680px;
 }
 
 .home_container, .ask_container, .result_container {
@@ -173,7 +174,7 @@ table {
     box-shadow: 12px 12px 30px rgba(160, 60, 60, 0.3);
     backdrop-filter: saturate(200%) blur(10px);
     border-radius: 50px;
-    height: 467px;
+    height: 720px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -181,17 +182,19 @@ table {
     position: relative;
     text-align: center;
     overflow: hidden;
-    padding: 100px 50px;
+    margin-top: 30px;
+    transition: all linear .2s;
 }
 
-.home_container {
-    transition: all linear .2s;
+.home_container.loader {
+    font-size: 1.5rem;
+    font-weight: 500;
 }
 
 .home_container::before,
 .ask_container::before,
 .result_container::before {
-    background: linear-gradient(135deg, rgba(160, 60, 60, 0.2), rgba(255, 255, 255, 0.25));
+    background: linear-gradient(135deg, rgba(160, 60, 60, 0.1), rgba(255, 255, 255, 0.7));
     content: "";
     position: absolute;
     top: 0;
@@ -424,12 +427,17 @@ button:focus {
 /* Result */
 
 .result_container {
-    padding: 50px;
     justify-content: flex-start;
     box-sizing: border-box;
-    height: 667px;
     display: flex;
     justify-content: center;
+}
+
+.result_wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
 }
 
 .result_list .list_item {
@@ -444,7 +452,7 @@ button:focus {
 }
 
 .result_wrap .result_title {
-    padding: 30px 0 35px;
+    padding-bottom: 40px;
     font-size: 42px;
     transition: all linear .2s;
 }
@@ -452,6 +460,8 @@ button:focus {
 .result_list {
     border: 1px solid rgba(160, 60, 60, 0.2);
     box-shadow: 4px 4px 20px rgba(160, 60, 60, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .result_title .foodName {
@@ -465,10 +475,6 @@ button:focus {
 
 .result_btn .homeBtn {
     margin-left: 20px;
-}
-
-.result_share {
-    margin-top: 30px;
 }
 
 .sns_btn {
@@ -511,17 +517,18 @@ button:focus {
     padding: 30px 0 0;
 }
 
-@media (max-width: 1024px) {
-    .container {
-        width: 80%;
-        max-width: 800px;
-    }
-}
-
 @media (max-width: 768px) {
 
-    .home_container, .ask_container {
-        padding: 60px;
+    .container {
+        width: 85%;
+    }
+
+    .home_container, .ask_container, .result_container {
+        height: 80vh;
+    }
+
+    .result_container {
+        padding: 0 30px;
     }
 
     .home_title {
@@ -541,15 +548,6 @@ button:focus {
         width: 60px;
     }
 
-    .mood_ask, .food_ask {
-        font-size: 24px;
-    }
-
-    .moods img {
-        height: 2.5rem;
-        width: 2.5rem;
-    }
-
     .foods img {
         height: 2.8rem;
         width: 2.8rem;
@@ -559,29 +557,23 @@ button:focus {
         font-size: 0.9rem;
     }
 
-    .result_container {
-        height: auto;
-    }
-
     .result_loading {
         width: 150px;
     }
 
     .result_wrap .result_title {
-        font-size: 32px;
+        font-size: 6vw;
     }
 
-    .result_btn .btn {
-        font-size: 18px;
-        width: 100px;
-    }
 }
 
 @media (max-width: 480px) {
 
     .home_container, .ask_container, .result_container {
-        /* min-height: auto; */
-        padding: 40px 30px;
+        
+    }
+    .result_container {
+        height: 70vh;
     }
 
     .home_title h1, .home_title h2 {
@@ -634,20 +626,37 @@ button:focus {
         font-size: 0.8rem;
     }
 
-    /* .result_container {
-        min-height: 447px;
-    } */
-    .result_listwarp {
-        border-radius: 30px;
+    .result_imgwrap {
+        display: flex;
+        flex-direction: column-reverse;
     }
 
-    .result_wrap .result_title {
-        padding: 20px 0 25px;
-        font-size: 24px;
+    .result_list {
+        box-shadow: none;
+        border: none;
+        border-radius: none;
+        width: 100%;
+        overflow: none;
     }
 
     .result_list .list_item {
-        max-width: 280px;
+        width: auto;
+        height: 360px;
+        max-height: none;
+        max-width: none;
+    }
+
+    .result_wrap {
+        justify-content: flex-start;
+    }
+
+    .result_wrap .result_title {
+        padding: 40px 0;
+        font-size: 7.2vw;
+    }
+
+    .result_btn {
+        padding-bottom: 40px;
     }
 
     .mood_box .btn, .food_box .btn, .result_wrap .btn {

@@ -28,7 +28,7 @@ const Result = ({ weatherObj }) => {
     }, [history, location.state]);
 
     const getFood = () => {
-        database.ref("foods").orderByChild("taste").equalTo(location.state.taste).once("value").then((data) => {
+        database.ref("foods").once("value").then((data) => {
             const foods = Object.values(data.val());
             showFood(foods);
         });
@@ -45,7 +45,7 @@ const Result = ({ weatherObj }) => {
             }
 
             let foodList = foods.filter(v => {
-                return v.weather.includes(weatherObj.condition) && v.mood.includes(location.state.mood) && v.temp.includes(foodTemp);
+                return v.weather.includes(weatherObj.condition) && v.mood.includes(location.state.mood) && v.temp.includes(foodTemp) && v.taste.includes(location.state.taste);
             });
 
             let resultList = foodList.sort(() => {
@@ -89,7 +89,10 @@ const Result = ({ weatherObj }) => {
                 {loading.isLoading ?
                     <img src="./images/loading.gif" alt="loading..." className="result_loading" /> :
                     <div className="result_wrap">
-                        <div className="result_listwarp">
+                        <div className="result_imgwrap">
+                            <h1 className="result_title">
+                                <span className="foodName">{foodName}</span>어떠세요?
+                            </h1>
                             <div className="result_list">
                                 {result.map((f, index) => {
                                     return (
@@ -99,9 +102,6 @@ const Result = ({ weatherObj }) => {
                                     );
                                 })}
                             </div>
-                            <h1 className="result_title">
-                                <span className="foodName">{foodName}</span>어떠세요?
-                            </h1>
                         </div>
                         <div className="result_btn">
                             <button className="nextBtn btn" onClick={() => nextSlides()}>NOPE!</button>
