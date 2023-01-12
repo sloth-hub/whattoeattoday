@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import Router from './Router';
 import Footer from './Footer';
-import firebase from 'firebase';
+import { auth } from "../fbase";
 
 const App = () => {
 
@@ -54,14 +54,12 @@ const App = () => {
 
     const LogIn = () => {
 
-        firebase.auth().signInAnonymously().then(() => {
-            firebase.auth().onAuthStateChanged((user) => {
+        auth.signInAnonymously().then((user) => {
                 if (user) {
                     setIsLogedIn(false);
                 } else {
                     console.log("Login Failed");
                 }
-            });
         }).catch((error) => {
             console.log(error.message);
         });
@@ -72,7 +70,7 @@ const App = () => {
         <div className="container">
             {loadedCoords === null ?
                 // null이면
-                <div className="loader">
+                <div className="home_container loader">
                     <h2>위치확인 허용을 눌러주세요.</h2>
                 </div>
                 : <Router isLoading={isLoading} weatherObj={weatherObj} isLogedIn={isLogedIn} />
