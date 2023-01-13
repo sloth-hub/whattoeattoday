@@ -103,19 +103,21 @@ const Result = ({ weatherObj }) => {
                                 })}
                             </div>
                         </div>
-                        <div className="result_btn">
-                            <button className="nextBtn btn" onClick={() => nextSlides()}>NOPE!</button>
-                            <button className="homeBtn btn" onClick={() => { history.push("/"); }}>HOME</button>
-                        </div>
-                        <div className="result_share">
-                            <KakaoShareBtn />
-                            <button id="facebook-link-icon" className="sns_btn fb-share-button" onClick={() => facebookShare()}>
-                                <img src={process.env.PUBLIC_URL + "/images/facebook-icon.png"} alt="facebook-share-icon" />
-                            </button>
-                            <FacebookHelmet img={foodImgUrl} menu={foodName} />
-                            <button id="twitter-link-icon" className="sns_btn" onClick={() => twitterShare()}>
-                                <img src={process.env.PUBLIC_URL + "/images/twitter-icon.png"} alt="facebook-share-icon" />
-                            </button>
+                        <div className="result_btnwrap">
+                            <div className="result_btn">
+                                <button className="nextBtn btn" onClick={() => nextSlides()}>NOPE!</button>
+                                <button className="homeBtn btn" onClick={() => { history.push("/"); }}>HOME</button>
+                            </div>
+                            <div className="result_share">
+                                <KakaoShareBtn />
+                                <button id="facebook-link-icon" className="sns_btn fb-share-button" onClick={() => facebookShare()}>
+                                    <img src={process.env.PUBLIC_URL + "/images/facebook-icon.png"} alt="facebook-share-icon" />
+                                </button>
+                                <FacebookHelmet img={foodImgUrl} menu={foodName} />
+                                <button id="twitter-link-icon" className="sns_btn" onClick={() => twitterShare()}>
+                                    <img src={process.env.PUBLIC_URL + "/images/twitter-icon.png"} alt="facebook-share-icon" />
+                                </button>
+                            </div>
                         </div>
                     </div>
                 }

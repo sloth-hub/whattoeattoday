@@ -391,6 +391,8 @@ button:focus {
 
 .foods {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     padding: 0.3rem 1.3rem 0.6rem;
     border-radius: 2.5rem;
 }
@@ -532,12 +534,11 @@ button:focus {
     }
 
     .home_title {
-        width: 69%;
-        min-width: 264px;
+        width: 60vw;
     }
 
     .home_title h1 {
-        font-size: 52px;
+        font-size: 10vw;
     }
 
     .home_weather {
@@ -569,34 +570,31 @@ button:focus {
 
 @media (max-width: 480px) {
 
-    .home_container, .ask_container, .result_container {
-        
-    }
-    .result_container {
-        height: 70vh;
-    }
-
     .home_title h1, .home_title h2 {
         text-align: center;
     }
 
     .home_title h1 {
-        font-size: 38px;
+        font-size: 10vw;
         margin-bottom: 5px;
     }
 
     .home_title h2 {
         font-weight: 900;
-        font-size: 24px;
+        font-size: 7vw;
     }
 
     .home_weather {
-        width: 150px;
+        width: 50vw;
         margin: 30px auto;
     }
 
     .home_start {
         margin: 0;
+    }
+
+    .mood_box, .food_box {
+        padding: 10px;
     }
 
     .mood_ask, .food_ask {
@@ -626,37 +624,46 @@ button:focus {
         font-size: 0.8rem;
     }
 
+    .result_container {
+        padding: 0;
+    }
+    
+    .result_wrap {
+        justify-content: flex-start;
+    }
+
     .result_imgwrap {
         display: flex;
+        height: 60%;
         flex-direction: column-reverse;
+        justify-content: space-between;
     }
 
     .result_list {
         box-shadow: none;
         border: none;
-        border-radius: none;
+        border-radius: initial;
         width: 100%;
-        overflow: none;
+        place-self: center;
     }
 
     .result_list .list_item {
         width: auto;
-        height: 360px;
-        max-height: none;
+        max-height: 310px;
         max-width: none;
     }
 
-    .result_wrap {
-        justify-content: flex-start;
-    }
-
     .result_wrap .result_title {
-        padding: 40px 0;
+        padding: 0;
+        padding-top: 20px;
         font-size: 7.2vw;
     }
 
-    .result_btn {
-        padding-bottom: 40px;
+    .result_btnwrap {
+        display: flex;
+        height: 40%;
+        flex-direction: column;
+        justify-content: space-evenly;
     }
 
     .mood_box .btn, .food_box .btn, .result_wrap .btn {
