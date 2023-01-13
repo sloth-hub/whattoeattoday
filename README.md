@@ -17,7 +17,6 @@ What to eat today?는 오늘의 기분과 날씨를 조합해 메뉴를 추천�
 + JavaScript
 + React
 + Firebase
-+ Git, Github
 
 ## COPYING / LICENSE
 
