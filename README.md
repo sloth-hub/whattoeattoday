@@ -2,7 +2,8 @@
 현대인이 매일 직면하는 최대의 난제, "오늘 뭐 먹지?"  
 What to eat today?는 오늘의 기분과 날씨를 조합해 메뉴를 추천해주는 사이트 입니다.  
 
-### [SITE LINK](https://sloth-hub.github.io/whattoeattoday/)
+## SITE LINK
+https://sloth-hub.github.io/whattoeattoday/
 
 ## PREVIEW
 ![screenshot_1](https://user-images.githubusercontent.com/53851248/166223185-b2b8ea8c-8bce-4d91-ab13-1a7648c6027e.png)
@@ -17,7 +18,6 @@ What to eat today?는 오늘의 기분과 날씨를 조합해 메뉴를 추천�
 + JavaScript
 + React
 + Firebase
-+ Git, Github
 
 ## COPYING / LICENSE
 
