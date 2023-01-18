@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/whattoeattoday/static/css/main.e8f6b168.chunk.css",
+    "main.css": "/whattoeattoday/static/css/main.9887b790.chunk.css",
     "main.js": "/whattoeattoday/static/js/main.adaa60a6.chunk.js",
     "main.js.map": "/whattoeattoday/static/js/main.adaa60a6.chunk.js.map",
     "runtime-main.js": "/whattoeattoday/static/js/runtime-main.8bc999da.js",
@@ -8,16 +8,16 @@
     "static/js/2.50a88e12.chunk.js": "/whattoeattoday/static/js/2.50a88e12.chunk.js",
     "static/js/2.50a88e12.chunk.js.map": "/whattoeattoday/static/js/2.50a88e12.chunk.js.map",
     "index.html": "/whattoeattoday/index.html",
-    "precache-manifest.3f73dace837ce3eb61c0c6396665b461.js": "/whattoeattoday/precache-manifest.3f73dace837ce3eb61c0c6396665b461.js",
+    "precache-manifest.96be0059cd9dd238907851355741b431.js": "/whattoeattoday/precache-manifest.96be0059cd9dd238907851355741b431.js",
     "service-worker.js": "/whattoeattoday/service-worker.js",
-    "static/css/main.e8f6b168.chunk.css.map": "/whattoeattoday/static/css/main.e8f6b168.chunk.css.map",
+    "static/css/main.9887b790.chunk.css.map": "/whattoeattoday/static/css/main.9887b790.chunk.css.map",
     "static/js/2.50a88e12.chunk.js.LICENSE.txt": "/whattoeattoday/static/js/2.50a88e12.chunk.js.LICENSE.txt",
     "static/js/main.adaa60a6.chunk.js.LICENSE.txt": "/whattoeattoday/static/js/main.adaa60a6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8bc999da.js",
     "static/js/2.50a88e12.chunk.js",
-    "static/css/main.e8f6b168.chunk.css",
+    "static/css/main.9887b790.chunk.css",
     "static/js/main.adaa60a6.chunk.js"
   ]
 }
