@@ -473,6 +473,7 @@ button:focus {
 .result_btn {
     display: flex;
     justify-content: center;
+    padding-bottom: 5vh;
 }
 
 .result_btn .homeBtn {
@@ -563,7 +564,7 @@ button:focus {
     }
 
     .result_wrap .result_title {
-        font-size: 6vw;
+        font-size: 7vw;
     }
 
 }
@@ -627,14 +628,14 @@ button:focus {
     .result_container {
         padding: 0;
     }
-    
+
     .result_wrap {
         justify-content: flex-start;
     }
 
     .result_imgwrap {
         display: flex;
-        height: 60%;
+        height: 65%;
         flex-direction: column-reverse;
         justify-content: space-between;
     }
@@ -656,14 +657,18 @@ button:focus {
     .result_wrap .result_title {
         padding: 0;
         padding-top: 20px;
-        font-size: 7.2vw;
+        font-size: 8vw;
     }
 
     .result_btnwrap {
         display: flex;
-        height: 40%;
+        height: 35%;
         flex-direction: column;
         justify-content: space-evenly;
+    }
+
+    .result_btn {
+        padding: 0;
     }
 
     .mood_box .btn, .food_box .btn, .result_wrap .btn {
