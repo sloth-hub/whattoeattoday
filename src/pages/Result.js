@@ -7,9 +7,7 @@ import { database } from "../fbase";
 
 const Result = ({ weatherObj }) => {
 
-    const [loading, setLoading] = useState({
-        isLoading: true
-    });
+    const [isLoading, setIsLoading] = useState(true);
     const [result, setResult] = useState("");
     const [foodName, setFoodName] = useState("");
     const [foodImgUrl, setFoodImgUrl] = useState("");
@@ -32,61 +30,65 @@ const Result = ({ weatherObj }) => {
             const foods = Object.values(data.val());
             showFood(foods);
         });
-    },
-        showFood = (foods) => {
+    }
 
-            let foodTemp;
-            if (weatherObj.temp < 10) { // 10도 미만이면
-                foodTemp = "cold";
-            } else if (weatherObj.temp >= 10 && weatherObj.temp < 24) { // 10도 이하거나 24도 미만이면
-                foodTemp = "normal";
-            } else { // 25도 이상이면
-                foodTemp = "hot";
-            }
+    const showFood = (foods) => {
 
-            let foodList = foods.filter(v => {
-                return v.weather.includes(weatherObj.condition) && v.mood.includes(location.state.mood) && v.temp.includes(foodTemp) && v.taste.includes(location.state.taste);
-            });
-
-            let resultList = foodList.sort(() => {
-                return .5 - Math.random();
-            });
-
-            setResult(resultList);
-            setLoading({ isLoading: false });
-            setFoodName(resultList[0].name);
-            setFoodImgUrl(resultList[0].img);
-        },
-        nextSlides = () => {
-            const item = document.querySelectorAll(".list_item");
-            item.forEach((v) => {
-                v.style.display = "none";
-                v.classList.remove("active");
-            });
-            slideIndex++;
-            if (slideIndex > item.length) {
-                slideIndex = 1;
-            }
-            item[slideIndex - 1].style.display = "block";
-            item[slideIndex - 1].classList.add("active");
-
-            let currentFood = document.querySelector("img.active");
-            document.querySelector("span.foodName").innerText = currentFood.alt;
-            document.querySelector("meta[property='og\\:image']").setAttribute("content", currentFood.src);
-            document.querySelector("meta[property='og\\:description']").setAttribute("content", `"오늘 뭐 먹지?" 하고 고민하셨죠? ${currentFood.alt} 어떠세요?`);
-        },
-        facebookShare = () => {
-            window.open(`https://www.facebook.com/sharer.php?u=${encodeURIComponent(window.location.href)}`);
-        },
-        twitterShare = () => {
-            let dsc = document.querySelector("meta[property='og\\:description']").getAttribute("content");
-            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(dsc)}&url=${encodeURIComponent(window.location.href)}`);
+        let foodTemp;
+        if (weatherObj.temp < 10) { // 10도 미만이면
+            foodTemp = "cold";
+        } else if (weatherObj.temp >= 10 && weatherObj.temp < 24) { // 10도 이하거나 24도 미만이면
+            foodTemp = "normal";
+        } else { // 25도 이상이면
+            foodTemp = "hot";
         }
+
+        let foodList = foods.filter(v => {
+            return v.weather.includes(weatherObj.condition) && v.mood.includes(location.state.mood) && v.temp.includes(foodTemp) && v.taste.includes(location.state.taste);
+        });
+
+        let resultList = foodList.sort(() => {
+            return .5 - Math.random();
+        });
+
+        setResult(resultList);
+        setIsLoading(false);
+        setFoodName(resultList[0].name);
+        setFoodImgUrl(resultList[0].img);
+    }
+
+    const nextSlides = () => {
+        const item = document.querySelectorAll(".list_item");
+        item.forEach((v) => {
+            v.style.display = "none";
+            v.classList.remove("active");
+        });
+        slideIndex++;
+        if (slideIndex > item.length) {
+            slideIndex = 1;
+        }
+        item[slideIndex - 1].style.display = "block";
+        item[slideIndex - 1].classList.add("active");
+
+        let currentFood = document.querySelector("img.active");
+        document.querySelector("span.foodName").innerText = currentFood.alt;
+        document.querySelector("meta[property='og\\:image']").setAttribute("content", currentFood.src);
+        document.querySelector("meta[property='og\\:description']").setAttribute("content", `"오늘 뭐 먹지?" 하고 고민하셨죠? ${currentFood.alt} 어떠세요?`);
+    }
+
+    const facebookShare = () => {
+        window.open(`https://www.facebook.com/sharer.php?u=${encodeURIComponent(window.location.href)}`);
+    }
+
+    const twitterShare = () => {
+        let dsc = document.querySelector("meta[property='og\\:description']").getAttribute("content");
+        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(dsc)}&url=${encodeURIComponent(window.location.href)}`);
+    }
 
     return (
         <div className="result_container">
             <Fade>
-                {loading.isLoading ?
+                {isLoading ?
                     <img src="./images/loading.gif" alt="loading..." className="result_loading" /> :
                     <div className="result_wrap">
                         <div className="result_imgwrap">
@@ -104,9 +106,9 @@ const Result = ({ weatherObj }) => {
                             </div>
                         </div>
                         <div className="result_btnwrap">
-                            <div className="result_btn">
-                                <button className="nextBtn btn" onClick={() => nextSlides()}>NOPE!</button>
-                                <button className="homeBtn btn" onClick={() => { history.push("/"); }}>HOME</button>
+                            <div className="btn_wrap btn">
+                                <button className="btn" onClick={() => nextSlides()}>NOPE!</button>
+                                <button className="btn" onClick={() => { history.push("/"); }}>HOME</button>
                             </div>
                             <div className="result_share">
                                 <KakaoShareBtn />
