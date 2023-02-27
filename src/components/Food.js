@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Fade from "react-reveal/Fade";
+import Mood from "./Mood";
 
 const Food = ({ mood }) => {
 
     const [taste, setTaste] = useState("");
+    const [isClickedPrev, setIsClickedPrev] = useState(false);
     const history = useHistory();
 
     const handleFoodChange = (evt) => {
         setTaste(evt.target.value);
     }
-    const handleFoodClick = () => {
+    const handleNextClick = () => {
         if (taste === "") {
             alert("땡기는 맛을 선택해주세요.");
         } else {
@@ -24,6 +26,13 @@ const Food = ({ mood }) => {
         }
     }
 
+    const handlePrevClick = () => {
+        setIsClickedPrev(true);
+    }
+
+    if (isClickedPrev) {
+        return <Mood />;
+    }
     return (
         <div className="ask_container">
             <Fade>
@@ -51,7 +60,10 @@ const Food = ({ mood }) => {
                             <span className="food_text">국탕면</span>
                         </label>
                     </div>
-                    <button className="food_next btn" onClick={handleFoodClick}>NEXT</button>
+                    <div className="btn_wrap btn">
+                    <button className="btn" onClick={handlePrevClick}>PREV</button>
+                    <button className="btn" onClick={handleNextClick}>NEXT</button>
+                    </div>
                 </div>
             </Fade >
         </div >
