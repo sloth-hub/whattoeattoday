@@ -230,7 +230,7 @@ table {
 }
 
 .btn:active {
-    box-shadow: inset 3px 3px 8px rgba(160, 60, 60, 0.15), inset -3px -2px 8px rgba(255, 255, 255, 0.3);
+    box-shadow: 1px 1px 5px rgba(160, 60, 60, 0.3), -1px -1px 5px rgba(255, 255, 255, 0.6), inset 1px 1px 5px rgba(160, 60, 60, 0.05);
     color: rgba(160, 60, 60, 0.6);
     transition: color .2s linear, opacity .2s linear;
     opacity: 1;
@@ -337,7 +337,7 @@ button:focus {
 }
 
 .mood_ask, .food_ask {
-    font-size: 28px;
+    font-size: 36px;
     font-weight: 500;
     -webkit-transition: all 0.2s linear;
     transition: all 0.2s linear;
@@ -425,6 +425,29 @@ button:focus {
     color: transparent;
 }
 
+.btn_wrap {
+    display: flex;
+    width: 65%;
+    justify-content: space-evenly;
+    padding: 0
+}
+
+.btn_wrap .btn {
+    box-shadow: none;
+    width: 100%;
+}
+
+.btn_wrap .btn:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.btn_wrap .btn:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+
 /* Result */
 
 .result_container {
@@ -469,14 +492,14 @@ button:focus {
     font-weight: 700;
 }
 
-.result_btn {
+.result_btnwrap {
     display: flex;
-    justify-content: space-evenly;
-    padding-bottom: 5vh;
+    flex-direction: column;
+    align-items: center;
 }
 
-.result_btn .btn {
-    width: 35%;
+.result_btnwrap .btn_wrap {
+    margin-bottom: 5.5vh;
 }
 
 .sns_btn {
@@ -549,12 +572,20 @@ button:focus {
         width: 60px;
     }
 
+    .mood_ask, .food_ask {
+        font-size: 24px;
+    }
+
     .result_loading {
         width: 150px;
     }
 
     .result_wrap .result_title {
         font-size: 7vw;
+    }
+
+    .result_list {
+        max-width: 450px;
     }
 
 }
@@ -585,10 +616,6 @@ button:focus {
 
     .mood_box, .food_box {
         padding: 10px;
-    }
-
-    .mood_ask, .food_ask {
-        font-size: 24px;
     }
 
     .moods img, .foods img {
@@ -628,6 +655,7 @@ button:focus {
         border-radius: initial;
         width: 100%;
         place-self: center;
+        max-width: initial;
     }
 
     .result_list .list_item {
@@ -650,14 +678,16 @@ button:focus {
         justify-content: space-evenly;
     }
 
-    .result_btn {
-        padding: 0;
+    .result_btnwrap .btn_wrap {
+        margin-bottom: initial;
     }
 
-    .mood_box .btn, .food_box .btn, .result_wrap .btn {
-        /* font-size: 16px;
-        width: 90px;
-        padding: 8px; */
+    .btn {
+        font-size: 5vw;
+    }
+    
+    .mood_next.btn {
+        width: 100px;
     }
 
     .sns_btn img {
