@@ -314,6 +314,10 @@ button:focus {
 
 /* Mood */
 
+.moods {
+    padding: 5px 12px;
+}
+
 .mood_box, .food_box {
     display: flex;
     justify-content: center;
@@ -335,23 +339,17 @@ button:focus {
 .mood_ask, .food_ask {
     font-size: 28px;
     font-weight: 500;
-    margin-bottom: 30px;
     -webkit-transition: all 0.2s linear;
     transition: all 0.2s linear;
     word-break: keep-all;
 }
 
 .moods, .foods {
-    margin-bottom: 40px;
-}
-
-.moods, .foods {
-    margin-top: 20px;
     background-color: transparent;
     background: linear-gradient(135deg, rgba(160, 60, 60, 0.08), rgba(255, 255, 255, 0.25));
     box-shadow: 6px 5px 10px rgba(160, 60, 60, 0.15), -6px -5px 8px rgba(255, 255, 255, 0.35), inset 3px 3px 8px rgba(160, 60, 60, 0.03);
-    padding: 0.2rem 0.4rem;
-    border-radius: 2.2rem
+    border-radius: 2.2rem;
+    margin: 40px 0;
 }
 
 .moods input[type="radio"],
@@ -362,8 +360,8 @@ button:focus {
 
 .moods img, .foods img {
     filter: brightness(300%);
-    height: 3rem;
-    width: 3rem;
+    height: 48px;
+    width: 48px;
     margin: 0.3rem;
 }
 
@@ -393,7 +391,7 @@ button:focus {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 0.3rem 1.3rem 0.6rem;
+    padding: 8px 20px 12px;
     border-radius: 2.5rem;
 }
 
@@ -410,8 +408,9 @@ button:focus {
 
 .foods .food_text {
     color: #fff;
+    font-size: 16px;
     font-weight: 500;
-    transition: color 0.2s linear;
+    transition: all 0.2s linear;
 }
 
 .foods input[type="radio"]:hover~.food_text,
@@ -454,7 +453,7 @@ button:focus {
 }
 
 .result_wrap .result_title {
-    padding-bottom: 40px;
+    padding-bottom: 5vh;
     font-size: 42px;
     transition: all linear .2s;
 }
@@ -472,12 +471,12 @@ button:focus {
 
 .result_btn {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     padding-bottom: 5vh;
 }
 
-.result_btn .homeBtn {
-    margin-left: 20px;
+.result_btn .btn {
+    width: 35%;
 }
 
 .sns_btn {
@@ -550,15 +549,6 @@ button:focus {
         width: 60px;
     }
 
-    .foods img {
-        height: 2.8rem;
-        width: 2.8rem;
-    }
-
-    .foods .food_text {
-        font-size: 0.9rem;
-    }
-
     .result_loading {
         width: 150px;
     }
@@ -586,7 +576,6 @@ button:focus {
     }
 
     .home_weather {
-        width: 50vw;
         margin: 30px auto;
     }
 
@@ -599,22 +588,12 @@ button:focus {
     }
 
     .mood_ask, .food_ask {
-        margin-bottom: 20px;
-        font-size: 22px;
+        font-size: 24px;
     }
 
-    .moods, .foods {
-        margin-bottom: 30px;
-    }
-
-    .moods img {
-        height: 2.1rem;
-        width: 2.1rem;
-    }
-
-    .foods img {
-        height: 2.3rem;
-        width: 2.3rem;
+    .moods img, .foods img {
+        height: 10vw;
+        width: 10vw;
     }
 
     .foods label+label {
@@ -622,15 +601,18 @@ button:focus {
     }
 
     .foods .food_text {
-        font-size: 0.8rem;
+        font-size: 14px;
     }
 
     .result_container {
         padding: 0;
+        height: 70vh;
     }
 
     .result_wrap {
         justify-content: flex-start;
+        align-items: center;
+        width: 100%;
     }
 
     .result_imgwrap {
@@ -662,6 +644,7 @@ button:focus {
 
     .result_btnwrap {
         display: flex;
+        width: 100%;
         height: 35%;
         flex-direction: column;
         justify-content: space-evenly;
@@ -672,9 +655,9 @@ button:focus {
     }
 
     .mood_box .btn, .food_box .btn, .result_wrap .btn {
-        font-size: 16px;
+        /* font-size: 16px;
         width: 90px;
-        padding: 8px;
+        padding: 8px; */
     }
 
     .sns_btn img {
