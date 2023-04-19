@@ -24,6 +24,7 @@ time, mark, audio, video {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+    box-sizing: border-box;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -219,12 +220,12 @@ table {
     padding: 10px;
     width: 120px;
     opacity: .6;
-    -webkit-transition: width 0.2s linear, padding 0.2s linear, font-size 0.2s linear;
-    transition: width 0.2s linear, padding 0.2s linear, font-size 0.2s linear;
+    -webkit-transition: width 0.2s linear, padding 0.2s linear, font-size 0.2s linear background 0.2s linear;
+    transition: width 0.2s linear, padding 0.2s linear, font-size 0.2s linear background 0.2s linear;
 }
 
 .btn:hover {
-    color: rgba(160, 60, 60, 0.7);
+    color: rgba(160, 60, 60, 0.9);
     box-shadow: 3px 3px 8px rgba(160, 60, 60, 0.3), -4px -3px 8px rgba(255, 255, 255, 0.6), inset 3px 3px 8px rgba(160, 60, 60, 0.05);
     transition: .2s linear;
 }
@@ -320,10 +321,11 @@ button:focus {
 
 .mood_box, .food_box {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     min-height: inherit;
+    height: 50%;
+    justify-content: space-evenly;
 }
 
 .moods .radiobox, .foods .radiobox {
@@ -359,7 +361,7 @@ button:focus {
 }
 
 .moods img, .foods img {
-    filter: brightness(300%);
+    filter: brightness(500%);
     height: 48px;
     width: 48px;
     margin: 0.3rem;
@@ -372,8 +374,8 @@ button:focus {
 
 .moods input[type="radio"]+img,
 .foods input[type="radio"]+img {
-    -webkit-transition: all 0.2s linear;
-    transition: all 0.2s linear;
+    -webkit-transition: all 0.1s linear;
+    transition: all 0.1s linear;
 }
 
 .moods input[type="radio"]:hover+img,
@@ -383,6 +385,7 @@ button:focus {
 .foods input[type="radio"]:checked+img,
 .foods input[type="radio"]:focus+img {
     filter: brightness(100%);
+    opacity: 0.8;
 }
 
 /* Food */
@@ -410,19 +413,13 @@ button:focus {
     color: #fff;
     font-size: 16px;
     font-weight: 500;
-    transition: all 0.2s linear;
+    transition: all 0.1s linear;
 }
 
 .foods input[type="radio"]:hover~.food_text,
 .foods input[type="radio"]:checked~.food_text,
 .foods input[type="radio"]:focus~.food_text {
-    background-color: #FFAF74;
-    /* fallback for old browsers */
-    background-image: -webkit-linear-gradient(135deg, #FFAF74, #FF6F73);
-    background-image: linear-gradient(135deg, #FFAF74, #FF6F73);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: #a03c3c;
 }
 
 .btn_wrap {
@@ -435,6 +432,12 @@ button:focus {
 .btn_wrap .btn {
     box-shadow: none;
     width: 100%;
+    opacity: 1;
+    background: none;
+}
+
+.btn_wrap .btn:hover {
+    background: linear-gradient(135deg, rgba(160, 60, 60, 0.15), rgba(255, 255, 255, 0.25));
 }
 
 .btn_wrap .btn:first-child {
@@ -573,7 +576,7 @@ button:focus {
     }
 
     .mood_ask, .food_ask {
-        font-size: 24px;
+        font-size: 5.2vw;
     }
 
     .result_loading {
@@ -685,7 +688,7 @@ button:focus {
     .btn {
         font-size: 5vw;
     }
-    
+
     .mood_next.btn {
         width: 100px;
     }
