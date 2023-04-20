@@ -37,7 +37,7 @@ const Food = ({ mood }) => {
         <div className="ask_container">
             <Fade>
                 <div className="food_box">
-                    <h1 className="food_ask">지금 어떤 맛이 땡기나요?</h1>
+                    <h1 className="food_ask">지금 <span>어떤 맛</span>이 땡기나요?</h1>
                     <div className="foods">
                         <label htmlFor="spicy">
                             <input type="radio" name="taste" className="spicy" id="spicy" value="spicy" onChange={handleFoodChange} />

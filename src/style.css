@@ -340,10 +340,14 @@ button:focus {
 
 .mood_ask, .food_ask {
     font-size: 36px;
-    font-weight: 500;
+    font-weight: 300;
     -webkit-transition: all 0.2s linear;
     transition: all 0.2s linear;
     word-break: keep-all;
+}
+
+.mood_ask span, .food_ask span {
+    font-weight: 500;
 }
 
 .moods, .foods {
@@ -378,10 +382,15 @@ button:focus {
     transition: all 0.1s linear;
 }
 
+
 .moods input[type="radio"]:hover+img,
+.foods input[type="radio"]:hover+img {
+    filter: brightness(100%);
+    opacity: 0.5;
+}
+
 .moods input[type="radio"]:checked+img,
 .moods input[type="radio"]:focus+img,
-.foods input[type="radio"]:hover+img,
 .foods input[type="radio"]:checked+img,
 .foods input[type="radio"]:focus+img {
     filter: brightness(100%);
@@ -416,7 +425,10 @@ button:focus {
     transition: all 0.1s linear;
 }
 
-.foods input[type="radio"]:hover~.food_text,
+.foods input[type="radio"]:hover~.food_text {
+    color: rgba(160, 60, 60, 0.6);
+}
+
 .foods input[type="radio"]:checked~.food_text,
 .foods input[type="radio"]:focus~.food_text {
     color: #a03c3c;
@@ -436,20 +448,23 @@ button:focus {
     background: none;
 }
 
-.btn_wrap .btn:hover {
-    background: linear-gradient(135deg, rgba(160, 60, 60, 0.15), rgba(255, 255, 255, 0.25));
-}
-
 .btn_wrap .btn:first-child {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+}
+.btn_wrap .btn:first-child:hover {
+    background: linear-gradient(135deg, rgba(160, 60, 60, 0.07), rgba(255, 255, 255, 0.15));
 }
 
 .btn_wrap .btn:last-child {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    background: linear-gradient(135deg, rgba(160, 60, 60, 0.08), rgba(255, 255, 255, 0.15));
 }
 
+.btn_wrap .btn:last-child:hover {
+    background: linear-gradient(135deg, rgba(160, 60, 60, 0.15), rgba(255, 255, 255, 0.25));
+}
 
 /* Result */
 
@@ -619,6 +634,10 @@ button:focus {
 
     .mood_box, .food_box {
         padding: 10px;
+    }
+
+    .mood_ask, .food_ask {
+        font-size: 6vw;
     }
 
     .moods img, .foods img {

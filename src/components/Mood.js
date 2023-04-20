@@ -26,7 +26,7 @@ const Mood = () => {
         <div className="ask_container">
             <Fade>
                 <div className="mood_box">
-                    <h1 className="mood_ask">당신의 오늘 기분은 어떤가요?</h1>
+                    <h1 className="mood_ask">당신의 <span>오늘 기분</span>은 어떤가요?</h1>
                     <div className="moods">
                         <label htmlFor="good">
                             <input type="radio" name="mood" className="good" id="good" value="good" onChange={handleMoodChange} />
