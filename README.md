@@ -12,11 +12,20 @@ What to eat today?는 오늘의 기분과 땡기는 맛, 날씨를 조합해 메
 ## 🔗 SITE LINK
 https://sloth-hub.github.io/whattoeattoday/
 
-## 💻 PREVIEW
+## 🖥 PREVIEW - **WEB**
 ![screenshot_1](https://user-images.githubusercontent.com/53851248/166223185-b2b8ea8c-8bce-4d91-ab13-1a7648c6027e.png)
 ![screenshot_2](https://user-images.githubusercontent.com/53851248/233378626-23ee66e2-6cd0-4806-912c-16f1fa7b7194.png)
 ![screenshot_3](https://user-images.githubusercontent.com/53851248/233378610-18a20981-ecbe-4795-8e18-a1d6d6ea5a60.png)
 ![screenshot_4](https://user-images.githubusercontent.com/53851248/233378619-37a49034-2ae2-408c-b24a-86937f3ba637.png)
+
+## 💻 PREVIEW - **TABLET**
+
+![wtet_tablet](https://github.com/sloth-hub/whattoeattoday/assets/53851248/1f938bd3-74aa-4523-be8a-1974825a9b68)
+
+## 📱 PREVIEW - **MOBILE**
+
+![wtet_mobile](https://github.com/sloth-hub/whattoeattoday/assets/53851248/879cc38e-b3ad-434f-bd5a-e7279c59796d)
+
 
 ## ⚙ TECHNOLOGIES
 
