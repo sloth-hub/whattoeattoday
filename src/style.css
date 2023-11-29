@@ -452,6 +452,7 @@ button:focus {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
+
 .btn_wrap .btn:first-child:hover {
     background: linear-gradient(135deg, rgba(160, 60, 60, 0.07), rgba(255, 255, 255, 0.15));
 }
@@ -478,7 +479,7 @@ button:focus {
 .result_wrap {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     height: 100%;
 }
 
@@ -516,8 +517,32 @@ button:focus {
     align-items: center;
 }
 
+.result_btnwrap .share_text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.result_btnwrap .share_text p {
+    font-weight: 500;
+    font-size: 1em;
+    padding: 0 10px;
+    text-wrap: nowrap;
+    color: rgba(160, 60, 60, 0.6);
+}
+
+.result_btnwrap .share_text::before, .result_btnwrap .share_text::after {
+    content: "";
+    display: block;
+    height: 1px;
+    border-bottom: 1px solid rgba(160, 60, 60, 0.4);
+    width: 100%;
+}
+
 .result_btnwrap .btn_wrap {
-    margin-bottom: 5.5vh;
+    margin: 4.2vh 0;
 }
 
 .sns_btn {
@@ -568,6 +593,7 @@ button:focus {
 
     .home_container, .ask_container, .result_container {
         height: 80vh;
+        min-height: 660px;
     }
 
     .result_container {
@@ -599,7 +625,7 @@ button:focus {
     }
 
     .result_wrap .result_title {
-        font-size: 7vw;
+        font-size: 38px;
     }
 
     .result_list {
@@ -656,6 +682,7 @@ button:focus {
     .result_container {
         padding: 0;
         height: 70vh;
+        min-height: 500px;
     }
 
     .result_wrap {
@@ -701,7 +728,16 @@ button:focus {
     }
 
     .result_btnwrap .btn_wrap {
-        margin-bottom: initial;
+        margin: 0;
+    }
+
+    .result_btnwrap .share_text {
+        padding: 0 20px;
+        margin-bottom: 0;
+    }
+
+    .result_btnwrap .share_text p {
+        font-size: 0.9em;
     }
 
     .btn {

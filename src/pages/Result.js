@@ -110,6 +110,9 @@ const Result = ({ weatherObj }) => {
                                 <button className="btn" onClick={() => nextSlides()}>NOPE!</button>
                                 <button className="btn" onClick={() => { history.push("/"); }}>HOME</button>
                             </div>
+                            <div className="share_text">
+                                <p>결과를 공유해보세요!</p>
+                            </div>
                             <div className="result_share">
                                 <KakaoShareBtn />
                                 <button id="facebook-link-icon" className="sns_btn fb-share-button" onClick={() => facebookShare()}>
