@@ -596,8 +596,7 @@ button:focus {
     }
 
     .home_container, .ask_container, .result_container {
-        height: 80vh;
-        min-height: 660px;
+        padding: 40px 30px;
     }
 
     .result_container {
