@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/whattoeattoday/static/css/main.47e1578e.chunk.css",
-    "main.js": "/whattoeattoday/static/js/main.9f4e4fed.chunk.js",
-    "main.js.map": "/whattoeattoday/static/js/main.9f4e4fed.chunk.js.map",
+    "main.css": "/whattoeattoday/static/css/main.3fd8710d.chunk.css",
+    "main.js": "/whattoeattoday/static/js/main.1c27dc71.chunk.js",
+    "main.js.map": "/whattoeattoday/static/js/main.1c27dc71.chunk.js.map",
     "runtime-main.js": "/whattoeattoday/static/js/runtime-main.8bc999da.js",
     "runtime-main.js.map": "/whattoeattoday/static/js/runtime-main.8bc999da.js.map",
     "static/js/2.c1a4f0b9.chunk.js": "/whattoeattoday/static/js/2.c1a4f0b9.chunk.js",
     "static/js/2.c1a4f0b9.chunk.js.map": "/whattoeattoday/static/js/2.c1a4f0b9.chunk.js.map",
     "index.html": "/whattoeattoday/index.html",
-    "precache-manifest.3b31554fc83a7ce940f80cb3089e19b9.js": "/whattoeattoday/precache-manifest.3b31554fc83a7ce940f80cb3089e19b9.js",
+    "precache-manifest.c76fe2be6fc5b85b517e4c2fc86f9e14.js": "/whattoeattoday/precache-manifest.c76fe2be6fc5b85b517e4c2fc86f9e14.js",
     "service-worker.js": "/whattoeattoday/service-worker.js",
-    "static/css/main.47e1578e.chunk.css.map": "/whattoeattoday/static/css/main.47e1578e.chunk.css.map",
+    "static/css/main.3fd8710d.chunk.css.map": "/whattoeattoday/static/css/main.3fd8710d.chunk.css.map",
     "static/js/2.c1a4f0b9.chunk.js.LICENSE.txt": "/whattoeattoday/static/js/2.c1a4f0b9.chunk.js.LICENSE.txt",
-    "static/js/main.9f4e4fed.chunk.js.LICENSE.txt": "/whattoeattoday/static/js/main.9f4e4fed.chunk.js.LICENSE.txt"
+    "static/js/main.1c27dc71.chunk.js.LICENSE.txt": "/whattoeattoday/static/js/main.1c27dc71.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8bc999da.js",
     "static/js/2.c1a4f0b9.chunk.js",
-    "static/css/main.47e1578e.chunk.css",
-    "static/js/main.9f4e4fed.chunk.js"
+    "static/css/main.3fd8710d.chunk.css",
+    "static/js/main.1c27dc71.chunk.js"
   ]
 }
