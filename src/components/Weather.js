@@ -47,7 +47,7 @@ const Weather = ({ weatherObj }) => {
     return (
         <div className="weatherbox">
             <p className="weatherTemp">{Math.round(weatherObj.temp)}˚C</p>
-            <img src={`${process.env.PUBLIC_URL + weatherOptions[weatherObj.condition].iconName}`} className="weatherIcon" alt={weatherObj.condition} />
+            <img src={`${process.env.PUBLIC_URL}/${weatherOptions[weatherObj.condition].iconName}`} className="weatherIcon" alt={weatherObj.condition} />
         </div>
     );
 }
