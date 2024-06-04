@@ -747,4 +747,9 @@ button:focus {
         width: 28px;
         height: 28px;
     }
+
+    footer {
+        padding: 0;
+        padding-top: 15px;
+    }
 }
