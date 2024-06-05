@@ -328,7 +328,7 @@ button:focus {
     min-height: inherit;
     height: 50%;
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
 }
 
 .moods .radiobox, .foods .radiobox {
@@ -403,21 +403,17 @@ button:focus {
 
 .foods {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-wrap: nowrap;
+    justify-content: center;
     padding: 8px 20px 12px;
     border-radius: 2.5rem;
+    gap: 6px;
 }
 
 .foods label {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-}
-
-.foods label+label {
-    margin-left: 10px;
 }
 
 .foods .food_text {
@@ -666,17 +662,21 @@ button:focus {
         margin: 0;
     }
 
+    .mood_box, .food_box {
+        gap: 30px;
+    }
+
+    .moods {
+        padding: 2px 6px;
+    }
+
     .mood_ask, .food_ask {
-        font-size: 6vw;
+        font-size: max(18px, 6vw);
     }
 
     .moods img, .foods img {
         height: 10vw;
         width: 10vw;
-    }
-
-    .foods label+label {
-        margin-left: 6px;
     }
 
     .foods .food_text {
@@ -739,7 +739,7 @@ button:focus {
     }
 
     .btn {
-        font-size: 5vw;
+        font-size: max(16px, 5vw);
     }
 
     .mood_next.btn {
