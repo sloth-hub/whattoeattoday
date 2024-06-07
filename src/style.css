@@ -256,6 +256,7 @@ button:focus {
     font-weight: 900;
     text-align: left;
     transition: all linear .2s;
+    animation: gradient 14s ease infinite;
 }
 
 .home_title h1 {
