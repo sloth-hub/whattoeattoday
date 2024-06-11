@@ -13,18 +13,19 @@ What to eat today?는 오늘의 기분과 땡기는 맛, 날씨를 조합해 메
 https://sloth-hub.github.io/whattoeattoday/
 
 ## 🖥 PREVIEW - **WEB**
-![screenshot_1](https://user-images.githubusercontent.com/53851248/166223185-b2b8ea8c-8bce-4d91-ab13-1a7648c6027e.png)
-![screenshot_2](https://user-images.githubusercontent.com/53851248/233378626-23ee66e2-6cd0-4806-912c-16f1fa7b7194.png)
-![screenshot_3](https://user-images.githubusercontent.com/53851248/233378610-18a20981-ecbe-4795-8e18-a1d6d6ea5a60.png)
-![screenshot_4](https://user-images.githubusercontent.com/53851248/233378619-37a49034-2ae2-408c-b24a-86937f3ba637.png)
+![wtet_pc_1](https://github.com/sloth-hub/whattoeattoday/assets/53851248/d980da2a-a3da-4559-a863-d8c23982ec8f)
+![wtet_pc_2](https://github.com/sloth-hub/whattoeattoday/assets/53851248/bb74a1e8-f2de-4487-90d3-e78b522609c8)
+![wtet_pc_3](https://github.com/sloth-hub/whattoeattoday/assets/53851248/a6b01799-4b1b-4393-ab3e-b23cbfd03158)
+![wtet_pc_4](https://github.com/sloth-hub/whattoeattoday/assets/53851248/0cbc70b5-6437-4cc3-ad7e-b915ae1996db)
 
 ## 💻 PREVIEW - **TABLET**
 
-![wtet_tablet](https://github.com/sloth-hub/whattoeattoday/assets/53851248/1f938bd3-74aa-4523-be8a-1974825a9b68)
+![wtet_tablet](https://github.com/sloth-hub/whattoeattoday/assets/53851248/c6033be4-c2eb-47b9-9958-273b238bb8f4)
 
 ## 📱 PREVIEW - **MOBILE**
 
-![wtet_mobile](https://github.com/sloth-hub/whattoeattoday/assets/53851248/879cc38e-b3ad-434f-bd5a-e7279c59796d)
+![wtet_mobile](https://github.com/sloth-hub/whattoeattoday/assets/53851248/18f361c4-a664-46e6-aadd-b00d32300118)
+
 
 
 ## ⚙ TECHNOLOGIES
