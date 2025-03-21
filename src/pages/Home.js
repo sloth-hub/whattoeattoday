@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Fade from "react-reveal/Fade";
+import { Fade } from "react-awesome-reveal";
 import Weather from "../components/Weather";
 
 const Home = ({ isLoading, weatherObj, isLogedIn }) => {
 
     return (
         <>
-            <Fade>
+            <Fade duration={2000}>
                 <div className="home_container">
                     <section className="home_title">
                         <h1>WHAT TO EAT TODAY?</h1>
@@ -16,7 +16,7 @@ const Home = ({ isLoading, weatherObj, isLogedIn }) => {
                     <section className="home_weather">
                         {isLoading ?
                             <p className="home_loading">loading..</p> :
-                            <Fade>
+                            <Fade duration={2000} >
                                 <Weather
                                     weatherObj={weatherObj} />
                             </Fade>

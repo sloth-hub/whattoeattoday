@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
-import Fade from "react-reveal/Fade";
+import { Fade, Slide } from "react-awesome-reveal";
 import KakaoShareBtn from "../components/KakaoShareBtn";
 import FacebookHelmet from "../components/FacebookHelmet";
 import { database } from "../fbase";
@@ -58,7 +58,7 @@ const Result = ({ weatherObj }) => {
     }
 
     const nextSlides = () => {
-        const item = document.querySelectorAll(".list_item");
+        const item = document.querySelectorAll(".result_list .list_item");
         item.forEach((v) => {
             v.style.display = "none";
             v.classList.remove("active");
@@ -87,46 +87,44 @@ const Result = ({ weatherObj }) => {
 
     return (
         <div className="result_container">
-            <Fade>
-                {isLoading ?
-                    <img src="./images/loading.gif" alt="loading..." className="result_loading" /> :
-                    <div className="result_wrap">
-                        <div className="result_imgwrap">
-                            <h1 className="result_title">
-                                <span className="foodName">{foodName}</span>어떠세요?
-                            </h1>
-                            <div className="result_list">
-                                {result.map((f, index) => {
-                                    return (
-                                        <Fade key={index}>
-                                            <img src={f.img} alt={f.name} className={index === 0 ? "list_item active" : "list_item"} />
-                                        </Fade>
-                                    );
-                                })}
-                            </div>
-                        </div>
-                        <div className="result_btnwrap">
-                            <div className="btn_wrap btn">
-                                <button className="btn" onClick={() => nextSlides()}>NOPE!</button>
-                                <button className="btn" onClick={() => { history.push("/"); }}>HOME</button>
-                            </div>
-                            <div className="share_text">
-                                <p>결과를 공유해보세요!</p>
-                            </div>
-                            <div className="result_share">
-                                <KakaoShareBtn />
-                                <button id="facebook-link-icon" className="sns_btn fb-share-button" onClick={() => facebookShare()}>
-                                    <img src={process.env.PUBLIC_URL + "/images/facebook-icon.png"} alt="facebook-share-icon" />
-                                </button>
-                                <FacebookHelmet img={foodImgUrl} menu={foodName} />
-                                <button id="twitter-link-icon" className="sns_btn" onClick={() => twitterShare()}>
-                                    <img src={process.env.PUBLIC_URL + "/images/twitter-icon.png"} alt="facebook-share-icon" />
-                                </button>
-                            </div>
+
+            {isLoading ?
+                <img src="./images/loading.gif" alt="loading..." className="result_loading" /> :
+                <div className="result_wrap">
+                    <div className="result_imgwrap">
+                        <h1 className="result_title">
+                            <span className="foodName">{foodName}</span>어떠세요?
+                        </h1>
+                        <div className="result_list">
+                            {result.map((f, index) => {
+                                return (
+                                    <img src={f.img} alt={f.name} className={index === 0 ? "list_item active" : "list_item"} />
+                                );
+                            })}
                         </div>
                     </div>
-                }
-            </Fade>
+                    <div className="result_btnwrap">
+                        <div className="btn_wrap btn">
+                            <button className="btn" onClick={() => nextSlides()}>NOPE!</button>
+                            <button className="btn" onClick={() => { history.push("/"); }}>HOME</button>
+                        </div>
+                        <div className="share_text">
+                            <p>결과를 공유해보세요!</p>
+                        </div>
+                        <div className="result_share">
+                            <KakaoShareBtn />
+                            <button id="facebook-link-icon" className="sns_btn fb-share-button" onClick={() => facebookShare()}>
+                                <img src={process.env.PUBLIC_URL + "/images/facebook-icon.png"} alt="facebook-share-icon" />
+                            </button>
+                            <FacebookHelmet img={foodImgUrl} menu={foodName} />
+                            <button id="twitter-link-icon" className="sns_btn" onClick={() => twitterShare()}>
+                                <img src={process.env.PUBLIC_URL + "/images/twitter-icon.png"} alt="facebook-share-icon" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+
         </div >
     );
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Food from "../components/Food";
-import Fade from "react-reveal/Fade";
+import { Fade } from "react-awesome-reveal";
 
 const Mood = () => {
 
